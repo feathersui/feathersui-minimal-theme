@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="MinimalTheme" package="com.feathersui.MinimalTheme" version="1.0.0" company="Bowler Hat LLC" />
+	<app main="feathers.controls.Application" path="bin" file="feathersui-minimal" />
+	
+	<source path="src" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	<haxelib name="feathersui" />
+
+	<haxeflag name="--macro" value="include('com.feathersui')"/>
+
+	<section if="flash">
+		<!--
+			don't remove dead code because other libraries that depend on
+			this one, and need to build .swc files too, might need it
+		 -->
+		<haxeflag name="-dce" value="no"/>
+		<template path="templates"/>
+	</section>
+</project>

@@ -1,0 +1,16 @@
+{
+  "name": "feathersui-minimal-theme",
+  "url": "https://feathersui.com/",
+  "tags": ["openfl", "feathersui"],
+  "description": "A theme for Feathers UI components in the style of MinimalComps by bit-101",
+  "version": "1.0.0-alpha.1",
+  "license": "MIT",
+  "classPath": "src",
+  "dependencies": {
+    "actuate": "",
+    "openfl": "",
+    "feathersui": ""
+  },
+  "contributors": ["bowlerhat"],
+  "releasenote": "Initial release"
+}
