@@ -199,16 +199,20 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 		return back;
 	}
 
-	private function getFaceSkin(?skinClass:Class<BaseGraphicsPathSkin>):BaseGraphicsPathSkin {
+	private function getFaceSkin(?skinClass:Class<BaseGraphicsPathSkin>, includeSelectedStyles:Bool = true):BaseGraphicsPathSkin {
 		if (skinClass == null) {
 			skinClass = MinimalRectangleSkin;
 		}
 		var face:BaseGraphicsPathSkin = Type.createInstance(skinClass, []);
 		face.fill = SolidColor(buttonFaceColor);
-		face.selectedFill = SolidColor(buttonSelectedColor);
+		if (includeSelectedStyles) {
+			face.selectedFill = SolidColor(buttonSelectedColor);
+		}
 		face.setFillForState(ButtonState.DOWN, SolidColor(buttonDownColor));
 		face.setFillForState(ToggleButtonState.DOWN(false), SolidColor(buttonDownColor));
-		face.setFillForState(ToggleButtonState.DOWN(true), SolidColor(buttonDownColor));
+		if (includeSelectedStyles) {
+			face.setFillForState(ToggleButtonState.DOWN(true), SolidColor(buttonDownColor));
+		}
 		face.border = None;
 		face.filters = [getShadow(1.0)];
 		return face;

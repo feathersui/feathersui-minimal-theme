@@ -20,7 +20,7 @@ class MinimalToggleIconSkin extends ProgrammaticSkin {
 		_back = theme.getBackSkin(skinClass);
 		addChild(_back);
 
-		_face = theme.getFaceSkin(skinClass);
+		_face = theme.getFaceSkin(skinClass, false);
 		addChild(_face);
 	}
 
@@ -28,6 +28,11 @@ class MinimalToggleIconSkin extends ProgrammaticSkin {
 	private var _face:BaseGraphicsPathSkin;
 
 	override private function update():Void {
+		_back.uiContext = uiContext;
+		_back.stateContext = stateContext;
+		_face.uiContext = uiContext;
+		_face.stateContext = stateContext;
+
 		_back.x = 0.0;
 		_back.y = 0.0;
 		_back.width = actualWidth;
