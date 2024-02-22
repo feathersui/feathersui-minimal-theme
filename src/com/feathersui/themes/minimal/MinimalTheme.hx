@@ -18,7 +18,9 @@ class MinimalTheme extends BaseMinimalTheme {
 	**/
 	public function new(darkMode:Bool = false) {
 		super(darkMode);
+		#if (feathersui >= "1.1.0")
 		com.feathersui.themes.minimal.components.MinimalActivityIndicatorStyles.initialize(this);
+		#end
 		com.feathersui.themes.minimal.components.MinimalAlertStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalApplicationStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalButtonStyles.initialize(this);

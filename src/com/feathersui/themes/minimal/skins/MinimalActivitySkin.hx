@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.skins;
 
+#if (feathersui >= "1.1.0")
 import feathers.skins.IIndeterminateSkin;
 import feathers.skins.ProgrammaticSkin;
 import feathers.utils.MathUtil;
@@ -107,3 +108,4 @@ class MinimalActivitySkin extends ProgrammaticSkin implements IIndeterminateSkin
 		}
 	}
 }
+#end

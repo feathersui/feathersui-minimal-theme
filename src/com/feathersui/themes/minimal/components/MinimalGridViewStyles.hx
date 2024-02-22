@@ -41,6 +41,7 @@ class MinimalGridViewStyles {
 				layout.requestedRowCount = 5.0;
 				gridView.layout = layout;
 			}
+			#if (feathersui >= "1.3.0")
 			if (gridView.headerCornerSkin == null) {
 				var headerCornerSkin = new MinimalRectangleSkin();
 				headerCornerSkin.border = None;
@@ -49,6 +50,9 @@ class MinimalGridViewStyles {
 				headerCornerSkin.height = 1.0;
 				gridView.headerCornerSkin = headerCornerSkin;
 			}
+			#else
+			gridView.extendedScrollBarY = true;
+			#end
 			if (gridView.columnResizeSkin == null) {
 				var columnResizeSkin = new MinimalRectangleSkin();
 				columnResizeSkin.fill = SolidColor(theme.labelTextColor);

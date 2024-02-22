@@ -58,6 +58,7 @@ class MinimalLabelStyles {
 				label.embedFonts = theme.embedFonts;
 			});
 		}
+		#if (feathersui >= "1.1.0")
 		if (styleProvider.getStyleFunction(Label, Label.VARIANT_DANGER) == null) {
 			styleProvider.setStyleFunction(Label, Label.VARIANT_DANGER, function(label:Label):Void {
 				if (label.textFormat == null) {
@@ -69,5 +70,6 @@ class MinimalLabelStyles {
 				label.embedFonts = theme.embedFonts;
 			});
 		}
+		#end
 	}
 }

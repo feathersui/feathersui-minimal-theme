@@ -33,60 +33,64 @@ class MinimalTreeGridViewStyles {
 			return;
 		}
 		var styleProvider = theme.styleProvider;
-		function setDefaultStyles(treeTreeGridView:TreeGridView):Void {
+		function setDefaultStyles(treeGridView:TreeGridView):Void {
 			var isDesktop = DeviceUtil.isDesktop();
-			treeTreeGridView.autoHideScrollBars = !isDesktop;
-			treeTreeGridView.fixedScrollBars = isDesktop;
-			if (treeTreeGridView.layout == null) {
+			treeGridView.autoHideScrollBars = !isDesktop;
+			treeGridView.fixedScrollBars = isDesktop;
+			if (treeGridView.layout == null) {
 				var layout = new VerticalListLayout();
 				layout.requestedRowCount = 5.0;
-				treeTreeGridView.layout = layout;
+				treeGridView.layout = layout;
 			}
-			if (treeTreeGridView.headerCornerSkin == null) {
+			#if (feathersui >= "1.3.0")
+			if (treeGridView.headerCornerSkin == null) {
 				var headerCornerSkin = new MinimalRectangleSkin();
 				headerCornerSkin.border = None;
 				headerCornerSkin.fill = SolidColor(theme.listHeadingColor);
 				headerCornerSkin.width = 1.0;
 				headerCornerSkin.height = 1.0;
-				treeTreeGridView.headerCornerSkin = headerCornerSkin;
+				treeGridView.headerCornerSkin = headerCornerSkin;
 			}
-			if (treeTreeGridView.columnResizeSkin == null) {
+			#else
+			treeGridView.extendedScrollBarY = true;
+			#end
+			if (treeGridView.columnResizeSkin == null) {
 				var columnResizeSkin = new MinimalRectangleSkin();
 				columnResizeSkin.fill = SolidColor(theme.labelTextColor);
 				columnResizeSkin.border = None;
 				columnResizeSkin.width = 1.0;
 				columnResizeSkin.height = 1.0;
-				treeTreeGridView.columnResizeSkin = columnResizeSkin;
+				treeGridView.columnResizeSkin = columnResizeSkin;
 			}
-			if (treeTreeGridView.focusRectSkin == null) {
+			if (treeGridView.focusRectSkin == null) {
 				var focusRectSkin = theme.getFocusRectSkin();
-				treeTreeGridView.focusRectSkin = focusRectSkin;
+				treeGridView.focusRectSkin = focusRectSkin;
 			}
-			treeTreeGridView.setFocusPadding(2.0);
-			treeTreeGridView.filters = [theme.getShadow(2.0, true)];
+			treeGridView.setFocusPadding(2.0);
+			treeGridView.filters = [theme.getShadow(2.0, true)];
 		}
-		function styleTreeGridViewWithBorderVariant(treeTreeGridView:TreeGridView):Void {
-			if (treeTreeGridView.backgroundSkin == null) {
+		function styleTreeGridViewWithBorderVariant(treeGridView:TreeGridView):Void {
+			if (treeGridView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 				backgroundSkin.width = 100.0;
 				backgroundSkin.height = 16.0;
-				treeTreeGridView.backgroundSkin = backgroundSkin;
+				treeGridView.backgroundSkin = backgroundSkin;
 			}
-			treeTreeGridView.setPadding(1.0);
-			setDefaultStyles(treeTreeGridView);
+			treeGridView.setPadding(1.0);
+			setDefaultStyles(treeGridView);
 		}
-		function styleTreeGridViewWithBorderlessVariant(treeTreeGridView:TreeGridView):Void {
-			if (treeTreeGridView.backgroundSkin == null) {
+		function styleTreeGridViewWithBorderlessVariant(treeGridView:TreeGridView):Void {
+			if (treeGridView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 				backgroundSkin.width = 100.0;
 				backgroundSkin.height = 16.0;
-				treeTreeGridView.backgroundSkin = backgroundSkin;
+				treeGridView.backgroundSkin = backgroundSkin;
 			}
-			setDefaultStyles(treeTreeGridView);
+			setDefaultStyles(treeGridView);
 		}
 		if (styleProvider.getStyleFunction(TreeGridView, TreeGridView.VARIANT_BORDER) == null) {
 			styleProvider.setStyleFunction(TreeGridView, TreeGridView.VARIANT_BORDER, styleTreeGridViewWithBorderVariant);
@@ -95,12 +99,12 @@ class MinimalTreeGridViewStyles {
 			styleProvider.setStyleFunction(TreeGridView, TreeGridView.VARIANT_BORDERLESS, styleTreeGridViewWithBorderlessVariant);
 		}
 		if (styleProvider.getStyleFunction(TreeGridView, null) == null) {
-			styleProvider.setStyleFunction(TreeGridView, null, function(treeTreeGridView:TreeGridView):Void {
+			styleProvider.setStyleFunction(TreeGridView, null, function(treeGridView:TreeGridView):Void {
 				var isDesktop = DeviceUtil.isDesktop();
 				if (isDesktop) {
-					styleTreeGridViewWithBorderVariant(treeTreeGridView);
+					styleTreeGridViewWithBorderVariant(treeGridView);
 				} else {
-					styleTreeGridViewWithBorderlessVariant(treeTreeGridView);
+					styleTreeGridViewWithBorderlessVariant(treeGridView);
 				}
 			});
 		}

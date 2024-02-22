@@ -2,6 +2,10 @@
 
 A theme for [Feathers UI](https://feathersui.com), based on the appearance of [MinimalComps](https://github.com/minimalcomps/minimalcomps) by Keith Peters.
 
+## Minimum Requirements
+
+- Feathers UI 1.0
+
 ## Installation
 
 Run the following command in a terminal to install feathersui-minimal-theme from GitHub.

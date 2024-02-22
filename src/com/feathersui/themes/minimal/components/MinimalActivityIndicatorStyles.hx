@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+#if (feathersui >= "1.1.0")
 import com.feathersui.themes.minimal.skins.MinimalActivitySkin;
 import feathers.controls.ActivityIndicator;
 import feathers.style.Theme;
@@ -38,3 +39,4 @@ class MinimalActivityIndicatorStyles {
 		}
 	}
 }
+#end
