@@ -2,7 +2,7 @@
 <project>
 	
 	<meta title="MinimalTheme" package="com.feathersui.MinimalTheme" version="1.0.0" company="Bowler Hat LLC" />
-	<app main="feathers.controls.Application" path="bin" file="feathersui-minimal" />
+	<app main="feathers.controls.Application" path="bin" file="feathersui-minimal-theme" />
 	
 	<source path="src" />
 	
