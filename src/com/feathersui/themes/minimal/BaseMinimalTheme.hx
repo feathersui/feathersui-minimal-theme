@@ -171,13 +171,16 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 	}
 
 	private function getTextFormat(?fontName:String, ?fontSize:Int, ?color:UInt, ?align:TextFormatAlign):TextFormat {
-		return new TextFormat(fontName != null ? fontName : this.fontName, fontSize != null ? fontSize : this.fontSize,
-			color != null ? color : labelTextColor, null, null, null, null, null, align != null ? align : null);
+		fontName = fontName != null ? fontName : this.fontName;
+		fontSize = fontSize != null ? fontSize : this.fontSize;
+		color = color != null ? color : labelTextColor;
+		align = align != null ? align : LEFT;
+		return new TextFormat(fontName, fontSize, color, false, false, false, null, null, align);
 	}
 
 	private function getDisabledTextFormat(?fontName:String, ?fontSize:Int, ?color:UInt, ?align:TextFormatAlign):TextFormat {
-		return new TextFormat(fontName != null ? fontName : this.fontName, fontSize != null ? fontSize : this.fontSize,
-			color != null ? color : labelTextDisabledColor);
+		color = color != null ? color : labelTextDisabledColor;
+		return getTextFormat(fontName, fontSize, color, align);
 	}
 
 	private function getShadow(dist:Float, knockout:Bool = false):DropShadowFilter {
