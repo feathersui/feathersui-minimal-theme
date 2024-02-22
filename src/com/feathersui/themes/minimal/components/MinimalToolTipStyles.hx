@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.Label;
 import feathers.core.DefaultToolTipManager;
 import feathers.style.Theme;
@@ -29,7 +30,13 @@ class MinimalToolTipStyles {
 		if (styleProvider.getStyleFunction(Label, DefaultToolTipManager.CHILD_VARIANT_TOOL_TIP) == null) {
 			styleProvider.setStyleFunction(Label, DefaultToolTipManager.CHILD_VARIANT_TOOL_TIP, function(toolTip:Label):Void {
 				if (toolTip.backgroundSkin == null) {
-					toolTip.backgroundSkin = theme.getFaceSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
+					backgroundSkin.fill = SolidColor(theme.textBackgroundColor);
+					backgroundSkin.border = None;
+					backgroundSkin.width = 8.0;
+					backgroundSkin.height = 8.0;
+					backgroundSkin.filters = [theme.getShadow(2.0)];
+					toolTip.backgroundSkin = backgroundSkin;
 				}
 				if (toolTip.textFormat == null) {
 					toolTip.textFormat = theme.getTextFormat();
