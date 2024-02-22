@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+#if (feathersui >= "1.3.0")
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.ToggleButtonState;
 import feathers.controls.dataRenderers.TreeGridViewRowRenderer;
@@ -44,3 +45,4 @@ class MinimalTreeGridViewRowRendererStyles {
 		}
 	}
 }
+#end

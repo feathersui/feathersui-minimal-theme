@@ -107,6 +107,7 @@ class MinimalGridViewStyles {
 				}
 			});
 		}
+		#if (feathersui >= "1.3.0")
 		if (styleProvider.getStyleFunction(ItemRenderer, GridView.CHILD_VARIANT_CELL_RENDERER) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, GridView.CHILD_VARIANT_CELL_RENDERER, function(itemRenderer:ItemRenderer):Void {
 				if (itemRenderer.backgroundSkin == null) {
@@ -123,6 +124,7 @@ class MinimalGridViewStyles {
 				styleProvider.getStyleFunction(ItemRenderer, null)(itemRenderer);
 			});
 		}
+		#end
 		if (styleProvider.getStyleFunction(Button, GridView.CHILD_VARIANT_HEADER_DIVIDER) == null) {
 			styleProvider.setStyleFunction(Button, GridView.CHILD_VARIANT_HEADER_DIVIDER, function(headerDivider:Button):Void {
 				var isDesktop = DeviceUtil.isDesktop();

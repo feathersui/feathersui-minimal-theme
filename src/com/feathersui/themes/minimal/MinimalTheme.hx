@@ -31,7 +31,9 @@ class MinimalTheme extends BaseMinimalTheme {
 		com.feathersui.themes.minimal.components.MinimalDatePickerStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalFormItemStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalGridViewStyles.initialize(this);
+		#if (feathersui >= "1.3.0")
 		com.feathersui.themes.minimal.components.MinimalGridViewRowRendererStyles.initialize(this);
+		#end
 		com.feathersui.themes.minimal.components.MinimalGroupListViewStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalHeaderStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalHierarchicalItemRendererStyles.initialize(this);
@@ -60,7 +62,9 @@ class MinimalTheme extends BaseMinimalTheme {
 		com.feathersui.themes.minimal.components.MinimalToggleSwitchStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalToolTipStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalTreeGridViewStyles.initialize(this);
+		#if (feathersui >= "1.3.0")
 		com.feathersui.themes.minimal.components.MinimalTreeGridViewRowRendererStyles.initialize(this);
+		#end
 		com.feathersui.themes.minimal.components.MinimalTreeViewStyles.initialize(this);
 	}
 }

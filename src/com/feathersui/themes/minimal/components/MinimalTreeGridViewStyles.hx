@@ -108,6 +108,7 @@ class MinimalTreeGridViewStyles {
 				}
 			});
 		}
+		#if (feathersui >= "1.3.0")
 		if (styleProvider.getStyleFunction(HierarchicalItemRenderer, TreeGridView.CHILD_VARIANT_CELL_RENDERER) == null) {
 			styleProvider.setStyleFunction(HierarchicalItemRenderer, TreeGridView.CHILD_VARIANT_CELL_RENDERER,
 				function(itemRenderer:HierarchicalItemRenderer):Void {
@@ -125,6 +126,7 @@ class MinimalTreeGridViewStyles {
 					styleProvider.getStyleFunction(HierarchicalItemRenderer, null)(itemRenderer);
 				});
 		}
+		#end
 		if (styleProvider.getStyleFunction(Button, TreeGridView.CHILD_VARIANT_HEADER_DIVIDER) == null) {
 			styleProvider.setStyleFunction(Button, TreeGridView.CHILD_VARIANT_HEADER_DIVIDER, function(headerDivider:Button):Void {
 				var isDesktop = DeviceUtil.isDesktop();
