@@ -91,7 +91,7 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 	private var secondaryLabelTextColor:UInt;
 	private var containerColor:UInt;
 
-	private var embedFonts:Bool = false;
+	private var embedFonts:Bool = true;
 	private var fontName:String = "PF Ronda Seven";
 	private var fontSize:Int = 8;
 	private var headingFontSize:Int = 9;
