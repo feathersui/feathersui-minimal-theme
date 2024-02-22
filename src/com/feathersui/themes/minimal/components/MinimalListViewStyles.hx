@@ -8,9 +8,9 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.ListView;
 import feathers.layout.VerticalListLayout;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 import feathers.utils.DeviceUtil;
 
@@ -46,7 +46,7 @@ class MinimalListViewStyles {
 		}
 		function styleListViewWithBorderVariant(listView:ListView):Void {
 			if (listView.backgroundSkin == null) {
-				var backgroundSkin = new RectangleSkin();
+				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 				backgroundSkin.width = 100.0;
@@ -58,7 +58,7 @@ class MinimalListViewStyles {
 		}
 		function styleListViewWithBorderlessVariant(listView:ListView):Void {
 			if (listView.backgroundSkin == null) {
-				var backgroundSkin = new RectangleSkin();
+				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 				backgroundSkin.width = 100.0;
@@ -82,7 +82,7 @@ class MinimalListViewStyles {
 					listView.layout = layout;
 				}
 				if (listView.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = SolidColor(1.0, theme.backgroundColor);
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 					backgroundSkin.width = 100.0;

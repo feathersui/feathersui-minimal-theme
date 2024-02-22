@@ -8,13 +8,13 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
 import feathers.controls.ButtonState;
 import feathers.controls.DatePicker;
 import feathers.controls.PopUpDatePicker;
 import feathers.controls.TextInput;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 import openfl.display.Shape;
 
@@ -69,7 +69,7 @@ class MinimalPopUpDatePickerStyles {
 		if (styleProvider.getStyleFunction(DatePicker, PopUpDatePicker.CHILD_VARIANT_DATE_PICKER) == null) {
 			styleProvider.setStyleFunction(DatePicker, PopUpDatePicker.CHILD_VARIANT_DATE_PICKER, function(datePicker:DatePicker):Void {
 				if (datePicker.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 					backgroundSkin.border = SolidColor(1.0, theme.backgroundColor);
 					datePicker.backgroundSkin = backgroundSkin;

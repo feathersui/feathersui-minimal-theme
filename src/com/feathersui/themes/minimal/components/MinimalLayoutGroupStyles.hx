@@ -8,9 +8,9 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.LayoutGroup;
 import feathers.layout.HorizontalLayout;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 
 /**
@@ -30,7 +30,7 @@ class MinimalLayoutGroupStyles {
 		if (styleProvider.getStyleFunction(LayoutGroup, LayoutGroup.VARIANT_TOOL_BAR) == null) {
 			styleProvider.setStyleFunction(LayoutGroup, LayoutGroup.VARIANT_TOOL_BAR, function(toolBar:LayoutGroup):Void {
 				if (toolBar.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.panelColor);
 					backgroundSkin.width = 100.0;

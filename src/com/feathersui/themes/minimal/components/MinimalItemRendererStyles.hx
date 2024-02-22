@@ -8,9 +8,9 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.ToggleButtonState;
 import feathers.controls.dataRenderers.ItemRenderer;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 
 /**
@@ -30,7 +30,7 @@ class MinimalItemRendererStyles {
 		if (styleProvider.getStyleFunction(ItemRenderer, null) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, null, function(itemRenderer:ItemRenderer):Void {
 				if (itemRenderer.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 					backgroundSkin.selectedFill = SolidColor(theme.listSelectedColor);

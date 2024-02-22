@@ -8,9 +8,9 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalTriangleSkin;
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.dataRenderers.SortOrderHeaderRenderer;
-import feathers.skins.RectangleSkin;
-import feathers.skins.TriangleSkin;
 import feathers.style.Theme;
 
 /**
@@ -30,7 +30,7 @@ class MinimalSortOrderHeaderRendererStyles {
 		if (styleProvider.getStyleFunction(SortOrderHeaderRenderer, null) == null) {
 			styleProvider.setStyleFunction(SortOrderHeaderRenderer, null, function(headerRenderer:SortOrderHeaderRenderer):Void {
 				if (headerRenderer.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listHeadingColor);
 					backgroundSkin.width = 100.0;
@@ -38,7 +38,7 @@ class MinimalSortOrderHeaderRendererStyles {
 					headerRenderer.backgroundSkin = backgroundSkin;
 				}
 				if (headerRenderer.sortAscendingIcon == null) {
-					var sortAscendingIcon = new TriangleSkin();
+					var sortAscendingIcon = new MinimalTriangleSkin();
 					sortAscendingIcon.pointPosition = TOP;
 					sortAscendingIcon.fill = SolidColor(theme.labelTextColor);
 					sortAscendingIcon.disabledFill = SolidColor(theme.labelTextDisabledColor);
@@ -47,7 +47,7 @@ class MinimalSortOrderHeaderRendererStyles {
 					headerRenderer.sortAscendingIcon = sortAscendingIcon;
 				}
 				if (headerRenderer.sortDescendingIcon == null) {
-					var sortDescendingIcon = new TriangleSkin();
+					var sortDescendingIcon = new MinimalTriangleSkin();
 					sortDescendingIcon.pointPosition = BOTTOM;
 					sortDescendingIcon.fill = SolidColor(theme.labelTextColor);
 					sortDescendingIcon.disabledFill = SolidColor(theme.labelTextDisabledColor);

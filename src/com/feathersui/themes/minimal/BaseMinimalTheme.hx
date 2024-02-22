@@ -8,13 +8,13 @@
 
 package com.feathersui.themes.minimal;
 
+import feathers.skins.RectangleSkin;
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.style.IDarkModeTheme;
-import feathers.skins.TabSkin;
 import feathers.events.StyleProviderEvent;
 import feathers.controls.ToggleButtonState;
 import feathers.controls.ButtonState;
 import feathers.skins.BaseGraphicsPathSkin;
-import feathers.skins.RectangleSkin;
 import openfl.filters.DropShadowFilter;
 import openfl.text.TextFormatAlign;
 import openfl.text.TextFormat;
@@ -65,7 +65,7 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 	private static final LIGHT_DANGER_TEXT = 0xFF3333;
 	private static final LIGHT_SECONDARY_LABEL_TEXT = 0x7F7F7F;
 	private static final LIGHT_CONTAINER = 0xEBEBEB;
-	private static final LIGHT_INPUT_TEXT_DISABLED = 0x999999;
+	private static final LIGHT_INPUT_TEXT_DISABLED = 0xAAAAAA;
 	private static final LIGHT_LABEL_TEXT_DISABLED = 0x999999;
 	private static final LIGHT_PROMPT_TEXT = 0x7F7F7F;
 
@@ -190,7 +190,7 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 
 	private function getBackSkin(?skinClass:Class<BaseGraphicsPathSkin>, ?color:UInt):BaseGraphicsPathSkin {
 		if (skinClass == null) {
-			skinClass = RectangleSkin;
+			skinClass = MinimalRectangleSkin;
 		}
 		var back:BaseGraphicsPathSkin = Type.createInstance(skinClass, []);
 		back.fill = SolidColor(color != null ? color : backgroundColor);
@@ -201,7 +201,7 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 
 	private function getFaceSkin(?skinClass:Class<BaseGraphicsPathSkin>):BaseGraphicsPathSkin {
 		if (skinClass == null) {
-			skinClass = RectangleSkin;
+			skinClass = MinimalRectangleSkin;
 		}
 		var face:BaseGraphicsPathSkin = Type.createInstance(skinClass, []);
 		face.fill = SolidColor(buttonFaceColor);

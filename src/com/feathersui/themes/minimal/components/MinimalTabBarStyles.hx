@@ -8,12 +8,12 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalTabSkin;
 import feathers.controls.ButtonState;
 import feathers.controls.TabBar;
 import feathers.controls.ToggleButton;
 import feathers.controls.ToggleButtonState;
 import feathers.layout.HorizontalLayout;
-import feathers.skins.TabSkin;
 import feathers.style.Theme;
 import feathers.utils.DeviceUtil;
 
@@ -62,8 +62,8 @@ class MinimalTabBarStyles {
 		if (styleProvider.getStyleFunction(ToggleButton, TabBar.CHILD_VARIANT_TAB) == null) {
 			styleProvider.setStyleFunction(ToggleButton, TabBar.CHILD_VARIANT_TAB, function(button:ToggleButton):Void {
 				if (button.backgroundSkin == null) {
-					var backgroundSkin = new TabSkin();
-					backgroundSkin.fill = SolidColor(theme.backgroundColor);
+					var backgroundSkin = new MinimalTabSkin();
+					backgroundSkin.fill = None;
 					backgroundSkin.selectedFill = SolidColor(theme.buttonFaceColor);
 					backgroundSkin.setFillForState(ButtonState.DOWN, SolidColor(theme.buttonDownColor));
 					backgroundSkin.setFillForState(ToggleButtonState.DOWN(false), SolidColor(theme.buttonDownColor));

@@ -8,13 +8,13 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.Button;
 import feathers.controls.ButtonState;
 import feathers.controls.TreeGridView;
 import feathers.controls.dataRenderers.HierarchicalItemRenderer;
 import feathers.controls.dataRenderers.ItemRenderer;
 import feathers.layout.VerticalListLayout;
-import feathers.skins.RectangleSkin;
 import feathers.skins.VerticalLineSkin;
 import feathers.style.Theme;
 import feathers.utils.DeviceUtil;
@@ -43,7 +43,7 @@ class MinimalTreeGridViewStyles {
 				treeTreeGridView.layout = layout;
 			}
 			if (treeTreeGridView.headerCornerSkin == null) {
-				var headerCornerSkin = new RectangleSkin();
+				var headerCornerSkin = new MinimalRectangleSkin();
 				headerCornerSkin.border = None;
 				headerCornerSkin.fill = SolidColor(theme.listHeadingColor);
 				headerCornerSkin.width = 1.0;
@@ -51,7 +51,7 @@ class MinimalTreeGridViewStyles {
 				treeTreeGridView.headerCornerSkin = headerCornerSkin;
 			}
 			if (treeTreeGridView.columnResizeSkin == null) {
-				var columnResizeSkin = new RectangleSkin();
+				var columnResizeSkin = new MinimalRectangleSkin();
 				columnResizeSkin.fill = SolidColor(theme.labelTextColor);
 				columnResizeSkin.border = None;
 				columnResizeSkin.width = 1.0;
@@ -67,7 +67,7 @@ class MinimalTreeGridViewStyles {
 		}
 		function styleTreeGridViewWithBorderVariant(treeTreeGridView:TreeGridView):Void {
 			if (treeTreeGridView.backgroundSkin == null) {
-				var backgroundSkin = new RectangleSkin();
+				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 				backgroundSkin.width = 100.0;
@@ -79,7 +79,7 @@ class MinimalTreeGridViewStyles {
 		}
 		function styleTreeGridViewWithBorderlessVariant(treeTreeGridView:TreeGridView):Void {
 			if (treeTreeGridView.backgroundSkin == null) {
-				var backgroundSkin = new RectangleSkin();
+				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 				backgroundSkin.width = 100.0;
@@ -110,7 +110,7 @@ class MinimalTreeGridViewStyles {
 					if (itemRenderer.backgroundSkin == null) {
 						// a transparent background skin ensures that CELL_TRIGGER
 						// gets dispatched
-						var backgroundSkin = new RectangleSkin();
+						var backgroundSkin = new MinimalRectangleSkin();
 						backgroundSkin.fill = SolidColor(0xff00ff, 0.0);
 						backgroundSkin.border = None;
 						backgroundSkin.width = 20.0;
@@ -148,7 +148,7 @@ class MinimalTreeGridViewStyles {
 		if (styleProvider.getStyleFunction(ItemRenderer, TreeGridView.CHILD_VARIANT_HEADER_RENDERER) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, TreeGridView.CHILD_VARIANT_HEADER_RENDERER, function(itemRenderer:ItemRenderer):Void {
 				if (itemRenderer.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listHeadingColor);
 					backgroundSkin.width = 100.0;

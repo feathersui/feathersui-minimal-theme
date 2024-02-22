@@ -8,13 +8,13 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.Alert;
 import feathers.controls.ButtonBar;
 import feathers.controls.Label;
 import feathers.layout.HorizontalDistributedLayout;
 import feathers.layout.HorizontalLayout;
 import feathers.layout.HorizontalLayoutData;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 import feathers.utils.DeviceUtil;
 
@@ -40,7 +40,7 @@ class MinimalAlertStyles {
 				alert.autoHideScrollBars = !isDesktop;
 				alert.fixedScrollBars = isDesktop;
 				if (alert.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.fill = SolidColor(theme.containerColor);
 					backgroundSkin.border = SolidColor(1.0, theme.backgroundColor);
 					backgroundSkin.maxWidth = 276.0;

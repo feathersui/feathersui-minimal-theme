@@ -8,9 +8,9 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalCircleSkin;
 import com.feathersui.themes.minimal.skins.MinimalToggleIconSkin;
 import feathers.controls.Radio;
-import feathers.skins.CircleSkin;
 import feathers.style.Theme;
 
 /**
@@ -30,7 +30,7 @@ class MinimalRadioStyles {
 		if (styleProvider.getStyleFunction(Radio, null) == null) {
 			styleProvider.setStyleFunction(Radio, null, function(radio:Radio):Void {
 				if (radio.icon == null) {
-					var icon = new MinimalToggleIconSkin(theme, CircleSkin);
+					var icon = new MinimalToggleIconSkin(theme, MinimalCircleSkin);
 					icon.width = 10.0;
 					icon.height = 10.0;
 					radio.icon = icon;

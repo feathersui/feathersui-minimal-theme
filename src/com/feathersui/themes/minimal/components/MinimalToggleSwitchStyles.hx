@@ -8,8 +8,9 @@
 
 package com.feathersui.themes.minimal.components;
 
-import feathers.controls.ToggleSwitch;
 import feathers.skins.PillSkin;
+import com.feathersui.themes.minimal.skins.MinimalPillSkin;
+import feathers.controls.ToggleSwitch;
 import feathers.style.Theme;
 
 /**
@@ -29,13 +30,13 @@ class MinimalToggleSwitchStyles {
 		if (styleProvider.getStyleFunction(ToggleSwitch, null) == null) {
 			styleProvider.setStyleFunction(ToggleSwitch, null, function(toggleSwitch:ToggleSwitch):Void {
 				if (toggleSwitch.trackSkin == null) {
-					var trackSkin = theme.getBackSkin(PillSkin);
+					var trackSkin = theme.getBackSkin(MinimalPillSkin);
 					trackSkin.width = 30.0;
 					trackSkin.height = 16.0;
 					toggleSwitch.trackSkin = trackSkin;
 				}
 				if (toggleSwitch.thumbSkin == null) {
-					var thumbSkin = theme.getFaceSkin(PillSkin);
+					var thumbSkin = theme.getFaceSkin(MinimalPillSkin);
 					thumbSkin.selectedFill = null;
 					thumbSkin.width = 14.0;
 					thumbSkin.height = 14.0;

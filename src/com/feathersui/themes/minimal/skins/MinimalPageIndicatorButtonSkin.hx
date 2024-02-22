@@ -15,7 +15,7 @@ import feathers.skins.ProgrammaticSkin;
 import openfl.filters.BitmapFilter;
 
 @:access(com.feathersui.themes.minimal.BaseMinimalTheme)
-class MinimalButtonSkin extends ProgrammaticSkin {
+class MinimalPageIndicatorButtonSkin extends ProgrammaticSkin {
 	public function new(theme:BaseMinimalTheme) {
 		super();
 
@@ -23,34 +23,20 @@ class MinimalButtonSkin extends ProgrammaticSkin {
 		addChild(_back);
 
 		_face = theme.getFaceSkin();
+		_face.selectedFill = null;
 		addChild(_face);
 
-		_upFilters = [theme.getShadow(1.0, false)];
-		_downFilters = [theme.getShadow(1.0, true)];
+		_face.filters = [theme.getShadow(1.0, false)];
 	}
 
 	private var _back:BaseGraphicsPathSkin;
 	private var _face:BaseGraphicsPathSkin;
 
-	private var _upFilters:Array<BitmapFilter>;
-	private var _downFilters:Array<BitmapFilter>;
+	private var _filters:Array<BitmapFilter>;
 
 	override private function update():Void {
 		_face.uiContext = uiContext;
-		_face.stateContext = stateContext;
 		_back.uiContext = uiContext;
-		_back.stateContext = stateContext;
-
-		var selected = (uiContext is IToggle) ? (cast uiContext : IToggle).selected : false;
-		if (stateContext != null) {
-			_face.filters = switch (stateContext.currentState) {
-				case ButtonState.DOWN:
-					_downFilters;
-				default: selected ? _downFilters : _upFilters;
-			};
-		} else {
-			_face.filters = _upFilters;
-		}
 
 		_back.x = 0.0;
 		_back.y = 0.0;

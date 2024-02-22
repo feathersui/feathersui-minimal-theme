@@ -8,10 +8,10 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalTriangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
 import feathers.controls.HScrollBar;
-import feathers.skins.TriangleSkin;
 import feathers.style.Theme;
 
 /**
@@ -59,7 +59,7 @@ class MinimalHScrollBarStyles {
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.icon == null) {
-					var icon = new TriangleSkin();
+					var icon = new MinimalTriangleSkin();
 					icon.pointPosition = LEFT;
 					icon.fill = SolidColor(theme.labelTextColor);
 					icon.disabledFill = SolidColor(theme.labelTextDisabledColor);
@@ -79,7 +79,7 @@ class MinimalHScrollBarStyles {
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.icon == null) {
-					var icon = new TriangleSkin();
+					var icon = new MinimalTriangleSkin();
 					icon.pointPosition = RIGHT;
 					icon.fill = SolidColor(theme.labelTextColor);
 					icon.disabledFill = SolidColor(theme.labelTextDisabledColor);

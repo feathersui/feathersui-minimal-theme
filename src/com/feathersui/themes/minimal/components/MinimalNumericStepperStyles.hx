@@ -49,6 +49,9 @@ class MinimalNumericStepperStyles {
 				if (button.textFormat == null) {
 					button.textFormat = theme.getTextFormat();
 				}
+				if (button.disabledTextFormat == null) {
+					button.disabledTextFormat = theme.getDisabledTextFormat();
+				}
 				button.embedFonts = theme.embedFonts;
 				button.gap = 2.0;
 			});
@@ -63,6 +66,9 @@ class MinimalNumericStepperStyles {
 				}
 				if (button.textFormat == null) {
 					button.textFormat = theme.getTextFormat();
+				}
+				if (button.disabledTextFormat == null) {
+					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
 				button.gap = 2.0;

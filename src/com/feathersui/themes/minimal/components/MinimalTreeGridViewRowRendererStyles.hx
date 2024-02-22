@@ -8,9 +8,9 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.ToggleButtonState;
 import feathers.controls.dataRenderers.TreeGridViewRowRenderer;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 
 /**
@@ -30,7 +30,7 @@ class MinimalTreeGridViewRowRendererStyles {
 		if (styleProvider.getStyleFunction(TreeGridViewRowRenderer, null) == null) {
 			styleProvider.setStyleFunction(TreeGridViewRowRenderer, null, function(rowRenderer:TreeGridViewRowRenderer):Void {
 				if (rowRenderer.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 					backgroundSkin.selectedFill = SolidColor(theme.listSelectedColor);

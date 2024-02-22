@@ -8,10 +8,10 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.GroupListView;
 import feathers.controls.dataRenderers.ItemRenderer;
 import feathers.layout.VerticalListLayout;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 import feathers.utils.DeviceUtil;
 
@@ -47,7 +47,7 @@ class MinimalGroupListViewStyles {
 		}
 		function styleGroupListViewWithBorderVariant(listView:GroupListView):Void {
 			if (listView.backgroundSkin == null) {
-				var backgroundSkin = new RectangleSkin();
+				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 				backgroundSkin.width = 100.0;
@@ -59,7 +59,7 @@ class MinimalGroupListViewStyles {
 		}
 		function styleGroupListViewWithBorderlessVariant(listView:GroupListView):Void {
 			if (listView.backgroundSkin == null) {
-				var backgroundSkin = new RectangleSkin();
+				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 				backgroundSkin.width = 100.0;
@@ -87,7 +87,7 @@ class MinimalGroupListViewStyles {
 		if (styleProvider.getStyleFunction(ItemRenderer, GroupListView.CHILD_VARIANT_HEADER_RENDERER) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, GroupListView.CHILD_VARIANT_HEADER_RENDERER, function(itemRenderer:ItemRenderer):Void {
 				if (itemRenderer.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listHeadingColor);
 					backgroundSkin.width = 100.0;

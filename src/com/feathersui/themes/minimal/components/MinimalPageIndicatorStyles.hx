@@ -8,12 +8,11 @@
 
 package com.feathersui.themes.minimal.components;
 
-import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
+import com.feathersui.themes.minimal.skins.MinimalPageIndicatorButtonSkin;
 import feathers.controls.PageIndicator;
 import feathers.controls.ToggleButton;
 import feathers.layout.HorizontalLayout;
 import feathers.skins.MultiSkin;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 
 /**
@@ -55,8 +54,8 @@ class MinimalPageIndicatorStyles {
 			styleProvider.setStyleFunction(ToggleButton, PageIndicator.CHILD_VARIANT_TOGGLE_BUTTON, function(button:ToggleButton):Void {
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MultiSkin();
-					backgroundSkin.defaultView = theme.getBackSkin(RectangleSkin);
-					backgroundSkin.selectedView = new MinimalButtonSkin(theme);
+					backgroundSkin.defaultView = theme.getBackSkin();
+					backgroundSkin.selectedView = new MinimalPageIndicatorButtonSkin(theme);
 					backgroundSkin.width = 8.0;
 					backgroundSkin.height = 8.0;
 					button.backgroundSkin = backgroundSkin;

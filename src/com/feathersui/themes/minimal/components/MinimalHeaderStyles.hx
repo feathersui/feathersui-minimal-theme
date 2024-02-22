@@ -8,8 +8,8 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.Header;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 
 /**
@@ -29,7 +29,7 @@ class MinimalHeaderStyles {
 		if (styleProvider.getStyleFunction(Header, null) == null) {
 			styleProvider.setStyleFunction(Header, null, function(header:Header):Void {
 				if (header.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.panelColor);
 					backgroundSkin.width = 100.0;

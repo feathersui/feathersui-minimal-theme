@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
 import feathers.controls.ButtonState;
@@ -16,7 +17,6 @@ import feathers.controls.Label;
 import feathers.controls.ToggleButtonState;
 import feathers.controls.dataRenderers.ItemRenderer;
 import feathers.skins.MultiSkin;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 import feathers.utils.DeviceUtil;
 import openfl.display.Shape;
@@ -40,7 +40,7 @@ class MinimalDatePickerStyles {
 		if (styleProvider.getStyleFunction(DatePicker, null) == null) {
 			styleProvider.setStyleFunction(DatePicker, null, function(datePicker:DatePicker):Void {
 				if (datePicker.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 					backgroundSkin.border = SolidColor(1.0, theme.backgroundColor);
 					datePicker.backgroundSkin = backgroundSkin;
@@ -66,7 +66,8 @@ class MinimalDatePickerStyles {
 					var backgroundSkin = new MultiSkin();
 					var buttonSkin = new MinimalButtonSkin(theme);
 					backgroundSkin.defaultView = buttonSkin;
-					backgroundSkin.setViewForState(ButtonState.UP, new RectangleSkin(SolidColor(0xff00ff, 0.0), None));
+					backgroundSkin.setViewForState(ButtonState.UP, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
+					backgroundSkin.setViewForState(ButtonState.DISABLED, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
 					if (isDesktop) {
 						backgroundSkin.width = 16.0;
 						backgroundSkin.height = 16.0;
@@ -113,7 +114,8 @@ class MinimalDatePickerStyles {
 					var backgroundSkin = new MultiSkin();
 					var buttonSkin = new MinimalButtonSkin(theme);
 					backgroundSkin.defaultView = buttonSkin;
-					backgroundSkin.setViewForState(ButtonState.UP, new RectangleSkin(SolidColor(0xff00ff, 0.0), None));
+					backgroundSkin.setViewForState(ButtonState.UP, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
+					backgroundSkin.setViewForState(ButtonState.DISABLED, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
 					if (isDesktop) {
 						backgroundSkin.width = 16.0;
 						backgroundSkin.height = 16.0;
@@ -160,7 +162,8 @@ class MinimalDatePickerStyles {
 					var backgroundSkin = new MultiSkin();
 					var buttonSkin = new MinimalButtonSkin(theme);
 					backgroundSkin.defaultView = buttonSkin;
-					backgroundSkin.setViewForState(ButtonState.UP, new RectangleSkin(SolidColor(0xff00ff, 0.0), None));
+					backgroundSkin.setViewForState(ButtonState.UP, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
+					backgroundSkin.setViewForState(ButtonState.DISABLED, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
 					if (isDesktop) {
 						backgroundSkin.width = 16.0;
 						backgroundSkin.height = 16.0;
@@ -209,7 +212,8 @@ class MinimalDatePickerStyles {
 					var backgroundSkin = new MultiSkin();
 					var buttonSkin = new MinimalButtonSkin(theme);
 					backgroundSkin.defaultView = buttonSkin;
-					backgroundSkin.setViewForState(ButtonState.UP, new RectangleSkin(SolidColor(0xff00ff, 0.0), None));
+					backgroundSkin.setViewForState(ButtonState.UP, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
+					backgroundSkin.setViewForState(ButtonState.DISABLED, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
 					if (isDesktop) {
 						backgroundSkin.width = 16.0;
 						backgroundSkin.height = 16.0;
@@ -266,7 +270,7 @@ class MinimalDatePickerStyles {
 			styleProvider.setStyleFunction(ItemRenderer, DatePicker.CHILD_VARIANT_DATE_RENDERER, function(dateRenderer:ItemRenderer):Void {
 				var isDesktop = DeviceUtil.isDesktop();
 				if (dateRenderer.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 					backgroundSkin.selectedFill = SolidColor(theme.listSelectedColor);
@@ -305,7 +309,7 @@ class MinimalDatePickerStyles {
 			styleProvider.setStyleFunction(ItemRenderer, DatePicker.CHILD_VARIANT_MUTED_DATE_RENDERER, function(dateRenderer:ItemRenderer):Void {
 				var isDesktop = DeviceUtil.isDesktop();
 				if (dateRenderer.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 					backgroundSkin.selectedFill = SolidColor(theme.listSelectedColor);

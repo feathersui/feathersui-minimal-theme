@@ -8,11 +8,11 @@
 
 package com.feathersui.themes.minimal.components;
 
+import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.ToggleButton;
 import feathers.controls.ToggleButtonState;
 import feathers.controls.dataRenderers.HierarchicalItemRenderer;
 import feathers.skins.MultiSkin;
-import feathers.skins.RectangleSkin;
 import feathers.style.Theme;
 import openfl.display.Shape;
 
@@ -33,7 +33,7 @@ class MinimalHierarchicalItemRendererStyles {
 		if (styleProvider.getStyleFunction(HierarchicalItemRenderer, null) == null) {
 			styleProvider.setStyleFunction(HierarchicalItemRenderer, null, function(itemRenderer:HierarchicalItemRenderer):Void {
 				if (itemRenderer.backgroundSkin == null) {
-					var backgroundSkin = new RectangleSkin();
+					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
 					backgroundSkin.selectedFill = SolidColor(theme.listSelectedColor);

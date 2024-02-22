@@ -11,10 +11,11 @@ package com.feathersui.themes.minimal.components;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
 import feathers.controls.ComboBox;
-import feathers.controls.Label;
 import feathers.controls.ListView;
 import feathers.controls.TextInput;
+import feathers.skins.MultiSkin;
 import feathers.style.Theme;
+import openfl.display.Shape;
 
 /**
 	Initialize "minimal" styles for the `ComboBox` component.
@@ -52,7 +53,23 @@ class MinimalComboBoxStyles {
 				button.iconPosition = RIGHT;
 				button.gap = Math.POSITIVE_INFINITY;
 				if (button.icon == null) {
-					button.icon = new Label("+");
+					var icon = new MultiSkin();
+
+					var defaultIcon = new Shape();
+					defaultIcon.graphics.beginFill(theme.labelTextColor);
+					defaultIcon.graphics.drawRect(2.0, 0.0, 1.0, 5.0);
+					defaultIcon.graphics.drawRect(0.0, 2.0, 5.0, 1.0);
+					defaultIcon.graphics.endFill();
+					icon.defaultView = defaultIcon;
+
+					var disabledIcon = new Shape();
+					disabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
+					disabledIcon.graphics.drawRect(2.0, 0.0, 1.0, 5.0);
+					disabledIcon.graphics.drawRect(0.0, 2.0, 5.0, 1.0);
+					disabledIcon.graphics.endFill();
+					icon.disabledView = disabledIcon;
+
+					button.icon = icon;
 				}
 			});
 		}
