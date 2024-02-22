@@ -24,6 +24,8 @@ class MinimalToggleIconSkin extends ProgrammaticSkin {
 		addChild(_face);
 	}
 
+	public var padding:Float = 2.0;
+
 	private var _back:BaseGraphicsPathSkin;
 	private var _face:BaseGraphicsPathSkin;
 
@@ -37,10 +39,10 @@ class MinimalToggleIconSkin extends ProgrammaticSkin {
 		_back.y = 0.0;
 		_back.width = actualWidth;
 		_back.height = actualHeight;
-		_face.x = 2.0;
-		_face.y = 2.0;
-		_face.width = actualWidth - 4.0;
-		_face.height = actualHeight - 4.0;
+		_face.x = padding;
+		_face.y = padding;
+		_face.width = actualWidth - (2.0 * padding);
+		_face.height = actualHeight - (2.0 * padding);
 		_face.visible = (uiContext is IToggle) ? (cast uiContext : IToggle).selected : false;
 	}
 }
