@@ -10,15 +10,15 @@ package com.feathersui.themes.minimal.components;
 
 import com.feathersui.themes.minimal.skins.MinimalTriangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
-import feathers.controls.TextCallout;
+import feathers.controls.Callout;
 import feathers.style.Theme;
 
 /**
-	Initialize "minimal" styles for the `TextCallout` component.
+	Initialize "minimal" styles for the `Callout` component.
 **/
 @:dox(hide)
 @:access(com.feathersui.themes.minimal.BaseMinimalTheme)
-class MinimalTextCalloutStyles {
+class MinimalCalloutStyles {
 	public static function initialize(?theme:BaseMinimalTheme):Void {
 		if (theme == null) {
 			theme = Std.downcast(Theme.fallbackTheme, BaseMinimalTheme);
@@ -27,18 +27,18 @@ class MinimalTextCalloutStyles {
 			return;
 		}
 		var styleProvider = theme.styleProvider;
-		if (styleProvider.getStyleFunction(TextCallout, null) == null) {
-			styleProvider.setStyleFunction(TextCallout, null, function(textCallout:TextCallout):Void {
-				if (textCallout.backgroundSkin == null) {
+		if (styleProvider.getStyleFunction(Callout, null) == null) {
+			styleProvider.setStyleFunction(Callout, null, function(callout:Callout):Void {
+				if (callout.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.fill = SolidColor(theme.textBackgroundColor);
 					backgroundSkin.border = None;
 					backgroundSkin.width = 8.0;
 					backgroundSkin.height = 8.0;
 					backgroundSkin.filters = [theme.getShadow(2.0)];
-					textCallout.backgroundSkin = backgroundSkin;
+					callout.backgroundSkin = backgroundSkin;
 				}
-				if (textCallout.topArrowSkin == null) {
+				if (callout.topArrowSkin == null) {
 					var topArrowSkin = new MinimalTriangleSkin();
 					topArrowSkin.pointPosition = TOP;
 					topArrowSkin.drawBaseBorder = false;
@@ -46,9 +46,9 @@ class MinimalTextCalloutStyles {
 					topArrowSkin.border = None;
 					topArrowSkin.width = 8.0;
 					topArrowSkin.height = 6.0;
-					textCallout.topArrowSkin = topArrowSkin;
+					callout.topArrowSkin = topArrowSkin;
 				}
-				if (textCallout.rightArrowSkin == null) {
+				if (callout.rightArrowSkin == null) {
 					var rightArrowSkin = new MinimalTriangleSkin();
 					rightArrowSkin.pointPosition = RIGHT;
 					rightArrowSkin.drawBaseBorder = false;
@@ -57,9 +57,9 @@ class MinimalTextCalloutStyles {
 					rightArrowSkin.width = 6.0;
 					rightArrowSkin.height = 8.0;
 					rightArrowSkin.filters = [theme.getShadow(2.0)];
-					textCallout.rightArrowSkin = rightArrowSkin;
+					callout.rightArrowSkin = rightArrowSkin;
 				}
-				if (textCallout.bottomArrowSkin == null) {
+				if (callout.bottomArrowSkin == null) {
 					var bottomArrowSkin = new MinimalTriangleSkin();
 					bottomArrowSkin.pointPosition = BOTTOM;
 					bottomArrowSkin.drawBaseBorder = false;
@@ -68,9 +68,9 @@ class MinimalTextCalloutStyles {
 					bottomArrowSkin.width = 8.0;
 					bottomArrowSkin.height = 6.0;
 					bottomArrowSkin.filters = [theme.getShadow(2.0)];
-					textCallout.bottomArrowSkin = bottomArrowSkin;
+					callout.bottomArrowSkin = bottomArrowSkin;
 				}
-				if (textCallout.leftArrowSkin == null) {
+				if (callout.leftArrowSkin == null) {
 					var leftArrowSkin = new MinimalTriangleSkin();
 					leftArrowSkin.pointPosition = LEFT;
 					leftArrowSkin.drawBaseBorder = false;
@@ -78,20 +78,13 @@ class MinimalTextCalloutStyles {
 					leftArrowSkin.border = None;
 					leftArrowSkin.width = 6.0;
 					leftArrowSkin.height = 8.0;
-					textCallout.leftArrowSkin = leftArrowSkin;
+					callout.leftArrowSkin = leftArrowSkin;
 				}
-				if (textCallout.textFormat == null) {
-					textCallout.textFormat = theme.getTextFormat();
-				}
-				if (textCallout.disabledTextFormat == null) {
-					textCallout.disabledTextFormat = theme.getDisabledTextFormat();
-				}
-				textCallout.embedFonts = theme.embedFonts;
 
-				textCallout.marginTop = 10.0;
-				textCallout.marginRight = 10.0;
-				textCallout.marginBottom = 10.0;
-				textCallout.marginLeft = 10.0;
+				callout.marginTop = 10.0;
+				callout.marginRight = 10.0;
+				callout.marginBottom = 10.0;
+				callout.marginLeft = 10.0;
 			});
 		}
 	}

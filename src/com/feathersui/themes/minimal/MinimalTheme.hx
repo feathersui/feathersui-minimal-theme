@@ -23,6 +23,7 @@ class MinimalTheme extends BaseMinimalTheme {
 		com.feathersui.themes.minimal.components.MinimalApplicationStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalButtonStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalButtonBarStyles.initialize(this);
+		com.feathersui.themes.minimal.components.MinimalCalloutStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalCheckStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalComboBoxStyles.initialize(this);
 		com.feathersui.themes.minimal.components.MinimalDatePickerStyles.initialize(this);
