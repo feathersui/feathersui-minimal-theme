@@ -71,7 +71,7 @@ class MinimalTabBarStyles {
 				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MinimalTabSkin();
-					backgroundSkin.fill = None;
+					backgroundSkin.fill = SolidColor(0xff00ff, 0.0); // for hit tests
 					backgroundSkin.selectedFill = SolidColor(theme.buttonFaceColor);
 					backgroundSkin.setFillForState(ButtonState.DOWN, SolidColor(theme.buttonDownColor));
 					backgroundSkin.setFillForState(ToggleButtonState.DOWN(false), SolidColor(theme.buttonDownColor));
