@@ -35,7 +35,7 @@ class MinimalTextInputStyles {
 						backgroundSkin.width = 100.0;
 						backgroundSkin.height = 16.0;
 					} else {
-						backgroundSkin.width = 80.0;
+						backgroundSkin.width = 120.0;
 						backgroundSkin.height = 32.0;
 					}
 					textInput.backgroundSkin = backgroundSkin;
