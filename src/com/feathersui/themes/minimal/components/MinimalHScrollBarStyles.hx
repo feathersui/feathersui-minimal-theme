@@ -49,8 +49,8 @@ class MinimalHScrollBarStyles {
 					scrollBar.showDecrementAndIncrementButtons = true;
 				}
 				#end
-				scrollBar.paddingLeft = 1.0;
-				scrollBar.paddingRight = 1.0;
+				scrollBar.paddingLeft = theme.smallPadding;
+				scrollBar.paddingRight = theme.smallPadding;
 			});
 		}
 		#if (feathersui >= "1.3.0")
@@ -71,7 +71,7 @@ class MinimalHScrollBarStyles {
 					icon.height = 6.0;
 					button.icon = icon;
 				}
-				button.setPadding(1.0);
+				button.setPadding(theme.smallPadding);
 			});
 		}
 		if (styleProvider.getStyleFunction(Button, HScrollBar.CHILD_VARIANT_INCREMENT_BUTTON) == null) {
@@ -91,7 +91,7 @@ class MinimalHScrollBarStyles {
 					icon.height = 6.0;
 					button.icon = icon;
 				}
-				button.setPadding(1.0);
+				button.setPadding(theme.smallPadding);
 			});
 		}
 		#end

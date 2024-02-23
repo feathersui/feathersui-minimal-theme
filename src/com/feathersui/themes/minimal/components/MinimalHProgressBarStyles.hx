@@ -51,7 +51,7 @@ class MinimalHProgressBarStyles {
 					}
 					progress.fillSkin = fillSkin;
 				}
-				progress.setPadding(1.0);
+				progress.setPadding(theme.smallPadding);
 			});
 		}
 	}

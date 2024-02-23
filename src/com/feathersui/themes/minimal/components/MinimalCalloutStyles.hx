@@ -81,10 +81,10 @@ class MinimalCalloutStyles {
 					callout.leftArrowSkin = leftArrowSkin;
 				}
 
-				callout.marginTop = 10.0;
-				callout.marginRight = 10.0;
-				callout.marginBottom = 10.0;
-				callout.marginLeft = 10.0;
+				callout.marginTop = 2.0 * theme.largePadding;
+				callout.marginRight = 2.0 * theme.largePadding;
+				callout.marginBottom = 2.0 * theme.largePadding;
+				callout.marginLeft = 2.0 * theme.largePadding;
 			});
 		}
 	}

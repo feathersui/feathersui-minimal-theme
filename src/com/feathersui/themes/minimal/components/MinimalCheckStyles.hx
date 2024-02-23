@@ -44,7 +44,7 @@ class MinimalCheckStyles {
 					var focusRectSkin = theme.getFocusRectSkin();
 					check.focusRectSkin = focusRectSkin;
 				}
-				check.setFocusPadding(2.0);
+				check.setFocusPadding(theme.mediumPadding);
 				if (check.textFormat == null) {
 					check.textFormat = theme.getTextFormat();
 				}
@@ -52,7 +52,7 @@ class MinimalCheckStyles {
 					check.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				check.embedFonts = theme.embedFonts;
-				check.gap = 2.0;
+				check.gap = theme.mediumPadding;
 			});
 		}
 	}

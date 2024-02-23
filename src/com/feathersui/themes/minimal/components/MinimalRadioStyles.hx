@@ -46,7 +46,7 @@ class MinimalRadioStyles {
 					var focusRectSkin = theme.getFocusRectSkin();
 					radio.focusRectSkin = focusRectSkin;
 				}
-				radio.setFocusPadding(2.0);
+				radio.setFocusPadding(theme.mediumPadding);
 				if (radio.textFormat == null) {
 					radio.textFormat = theme.getTextFormat();
 				}
@@ -54,7 +54,7 @@ class MinimalRadioStyles {
 					radio.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				radio.embedFonts = theme.embedFonts;
-				radio.gap = 2.0;
+				radio.gap = theme.mediumPadding;
 			});
 		}
 	}

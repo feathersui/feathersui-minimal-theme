@@ -56,11 +56,11 @@ class MinimalTabBarStyles {
 					if (!isDesktop) {
 						layout.horizontalAlign = CENTER;
 					}
-					layout.paddingLeft = 2.0;
-					layout.paddingRight = 2.0;
-					layout.paddingTop = 2.0;
+					layout.paddingLeft = theme.mediumPadding;
+					layout.paddingRight = theme.mediumPadding;
+					layout.paddingTop = theme.mediumPadding;
 					layout.paddingBottom = 0.0;
-					layout.gap = 1.0;
+					layout.gap = theme.smallPadding;
 					tabBar.layout = layout;
 				}
 			});
@@ -91,7 +91,7 @@ class MinimalTabBarStyles {
 					var focusRectSkin = theme.getFocusRectSkin();
 					button.focusRectSkin = focusRectSkin;
 				}
-				button.setFocusPadding(2.0);
+				button.setFocusPadding(theme.mediumPadding);
 				if (button.textFormat == null) {
 					button.textFormat = theme.getTextFormat();
 				}
@@ -99,9 +99,9 @@ class MinimalTabBarStyles {
 					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.paddingLeft = 2.0;
-				button.paddingRight = 2.0;
-				button.gap = 2.0;
+				button.paddingLeft = theme.mediumPadding;
+				button.paddingRight = theme.mediumPadding;
+				button.gap = theme.mediumPadding;
 			});
 		}
 	}

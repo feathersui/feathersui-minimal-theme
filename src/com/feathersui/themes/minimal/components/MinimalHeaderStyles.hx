@@ -52,14 +52,14 @@ class MinimalHeaderStyles {
 				header.embedFonts = theme.embedFonts;
 
 				#if (feathersui >= "1.3.0")
-				header.setPadding(2.0);
+				header.setPadding(theme.mediumPadding);
 				#else
-				header.paddingTop = 2.0;
-				header.paddingRight = 2.0;
-				header.paddingBottom = 2.0;
-				header.paddingLeft = 2.0;
+				header.paddingTop = theme.mediumPadding;
+				header.paddingRight = theme.mediumPadding;
+				header.paddingBottom = theme.mediumPadding;
+				header.paddingLeft = theme.mediumPadding;
 				#end
-				header.minGap = 2.0;
+				header.minGap = theme.mediumPadding;
 			});
 		}
 	}

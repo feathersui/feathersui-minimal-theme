@@ -65,7 +65,7 @@ class MinimalGridViewStyles {
 				var focusRectSkin = theme.getFocusRectSkin();
 				gridView.focusRectSkin = focusRectSkin;
 			}
-			gridView.setFocusPadding(2.0);
+			gridView.setFocusPadding(theme.mediumPadding);
 			gridView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleGridViewWithBorderVariant(gridView:GridView):Void {
@@ -83,7 +83,7 @@ class MinimalGridViewStyles {
 				}
 				gridView.backgroundSkin = backgroundSkin;
 			}
-			gridView.setPadding(1.0);
+			gridView.setPadding(theme.smallPadding);
 			setDefaultStyles(gridView);
 		}
 		function styleGridViewWithBorderlessVariant(gridView:GridView):Void {
@@ -191,9 +191,9 @@ class MinimalGridViewStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingLeft = 5.0;
-				itemRenderer.paddingRight = 5.0;
-				itemRenderer.gap = 2.0;
+				itemRenderer.paddingLeft = theme.smallPadding + theme.largePadding;
+				itemRenderer.paddingRight = theme.smallPadding + theme.largePadding;
+				itemRenderer.gap = theme.mediumPadding;
 			});
 		}
 	}

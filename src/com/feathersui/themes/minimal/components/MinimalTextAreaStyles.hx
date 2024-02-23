@@ -43,7 +43,7 @@ class MinimalTextAreaStyles {
 					var focusRectSkin = theme.getFocusRectSkin();
 					textArea.focusRectSkin = focusRectSkin;
 				}
-				textArea.setFocusPadding(2.0);
+				textArea.setFocusPadding(theme.mediumPadding);
 				if (textArea.textFormat == null) {
 					textArea.textFormat = theme.getTextFormat(null, null, theme.inputTextColor);
 				}
@@ -54,9 +54,9 @@ class MinimalTextAreaStyles {
 					textArea.promptTextFormat = theme.getTextFormat(null, null, theme.promptTextColor);
 				}
 				textArea.embedFonts = theme.embedFonts;
-				textArea.setPadding(1.0);
-				textArea.textPaddingLeft = 2.0;
-				textArea.textPaddingRight = 2.0;
+				textArea.setPadding(theme.smallPadding);
+				textArea.textPaddingLeft = theme.mediumPadding;
+				textArea.textPaddingRight = theme.mediumPadding;
 			});
 		}
 	}

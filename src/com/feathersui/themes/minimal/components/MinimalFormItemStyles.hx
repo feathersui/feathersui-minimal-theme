@@ -52,7 +52,7 @@ class MinimalFormItemStyles {
 					formItem.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 
-				formItem.gap = 1.0;
+				formItem.gap = theme.smallPadding;
 			});
 		}
 	}

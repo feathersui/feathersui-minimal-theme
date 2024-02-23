@@ -70,9 +70,9 @@ class MinimalSortOrderHeaderRendererStyles {
 				}
 				headerRenderer.embedFonts = theme.embedFonts;
 				headerRenderer.horizontalAlign = LEFT;
-				headerRenderer.paddingLeft = 5.0;
-				headerRenderer.paddingRight = 5.0;
-				headerRenderer.gap = 2.0;
+				headerRenderer.paddingLeft = theme.smallPadding + theme.largePadding;
+				headerRenderer.paddingRight = theme.smallPadding + theme.largePadding;
+				headerRenderer.gap = theme.mediumPadding;
 			});
 		}
 	}

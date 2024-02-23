@@ -47,8 +47,8 @@ class MinimalLayoutGroupStyles {
 
 				if (toolBar.layout == null) {
 					var layout = new HorizontalLayout();
-					layout.setPadding(2.0);
-					layout.gap = 2.0;
+					layout.setPadding(theme.mediumPadding);
+					layout.gap = theme.mediumPadding;
 					layout.horizontalAlign = LEFT;
 					layout.verticalAlign = MIDDLE;
 					toolBar.layout = layout;

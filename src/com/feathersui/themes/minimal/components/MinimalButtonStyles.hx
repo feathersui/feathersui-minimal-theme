@@ -44,7 +44,7 @@ class MinimalButtonStyles {
 					var focusRectSkin = theme.getFocusRectSkin();
 					button.focusRectSkin = focusRectSkin;
 				}
-				button.setFocusPadding(2.0);
+				button.setFocusPadding(theme.mediumPadding);
 				if (button.textFormat == null) {
 					button.textFormat = theme.getTextFormat();
 				}
@@ -52,9 +52,9 @@ class MinimalButtonStyles {
 					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.paddingLeft = 2.0;
-				button.paddingRight = 2.0;
-				button.gap = 2.0;
+				button.paddingLeft = theme.mediumPadding;
+				button.paddingRight = theme.mediumPadding;
+				button.gap = theme.mediumPadding;
 			});
 		}
 		if (styleProvider.getStyleFunction(Button, Button.VARIANT_PRIMARY) == null) {

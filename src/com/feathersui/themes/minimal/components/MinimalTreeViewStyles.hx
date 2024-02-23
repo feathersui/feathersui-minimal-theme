@@ -41,7 +41,7 @@ class MinimalTreeViewStyles {
 				var focusRectSkin = theme.getFocusRectSkin();
 				treeView.focusRectSkin = focusRectSkin;
 			}
-			treeView.setFocusPadding(2.0);
+			treeView.setFocusPadding(theme.mediumPadding);
 			treeView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleTreeViewWithBorderVariant(treeView:TreeView):Void {
@@ -59,7 +59,7 @@ class MinimalTreeViewStyles {
 				}
 				treeView.backgroundSkin = backgroundSkin;
 			}
-			treeView.setPadding(1.0);
+			treeView.setPadding(theme.smallPadding);
 			setDefaultStyles(treeView);
 		}
 		function styleTreeViewWithBorderlessVariant(treeView:TreeView):Void {

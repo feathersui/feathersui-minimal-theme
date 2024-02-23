@@ -42,7 +42,7 @@ class MinimalGroupListViewStyles {
 				var focusRectSkin = theme.getFocusRectSkin();
 				listView.focusRectSkin = focusRectSkin;
 			}
-			listView.setFocusPadding(2.0);
+			listView.setFocusPadding(theme.mediumPadding);
 			listView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleGroupListViewWithBorderVariant(listView:GroupListView):Void {
@@ -60,7 +60,7 @@ class MinimalGroupListViewStyles {
 				}
 				listView.backgroundSkin = backgroundSkin;
 			}
-			listView.setPadding(1.0);
+			listView.setPadding(theme.smallPadding);
 			setDefaultStyles(listView);
 		}
 		function styleGroupListViewWithBorderlessVariant(listView:GroupListView):Void {
@@ -120,9 +120,9 @@ class MinimalGroupListViewStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingLeft = 5.0;
-				itemRenderer.paddingRight = 5.0;
-				itemRenderer.gap = 2.0;
+				itemRenderer.paddingLeft = theme.smallPadding + theme.largePadding;
+				itemRenderer.paddingRight = theme.smallPadding + theme.largePadding;
+				itemRenderer.gap = theme.mediumPadding;
 			});
 		}
 	}

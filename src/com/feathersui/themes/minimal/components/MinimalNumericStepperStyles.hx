@@ -36,7 +36,7 @@ class MinimalNumericStepperStyles {
 					var focusRectSkin = theme.getFocusRectSkin();
 					stepper.focusRectSkin = focusRectSkin;
 				}
-				stepper.setFocusPadding(2.0);
+				stepper.setFocusPadding(theme.mediumPadding);
 			});
 		}
 		if (styleProvider.getStyleFunction(Button, NumericStepper.CHILD_VARIANT_DECREMENT_BUTTON) == null) {
@@ -60,7 +60,7 @@ class MinimalNumericStepperStyles {
 					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.gap = 2.0;
+				button.gap = theme.mediumPadding;
 			});
 		}
 		if (styleProvider.getStyleFunction(Button, NumericStepper.CHILD_VARIANT_INCREMENT_BUTTON) == null) {
@@ -84,7 +84,7 @@ class MinimalNumericStepperStyles {
 					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.gap = 2.0;
+				button.gap = theme.mediumPadding;
 			});
 		}
 		if (styleProvider.getStyleFunction(TextInput, NumericStepper.CHILD_VARIANT_TEXT_INPUT) == null) {
@@ -111,11 +111,11 @@ class MinimalNumericStepperStyles {
 					textInput.promptTextFormat = theme.getTextFormat(null, null, theme.promptTextColor);
 				}
 				textInput.embedFonts = theme.embedFonts;
-				textInput.paddingLeft = 2.0;
-				textInput.paddingRight = 2.0;
+				textInput.paddingLeft = theme.mediumPadding;
+				textInput.paddingRight = theme.mediumPadding;
 				textInput.verticalAlign = MIDDLE;
-				textInput.leftViewGap = 2.0;
-				textInput.rightViewGap = 2.0;
+				textInput.leftViewGap = theme.mediumPadding;
+				textInput.rightViewGap = theme.mediumPadding;
 			});
 		}
 	}

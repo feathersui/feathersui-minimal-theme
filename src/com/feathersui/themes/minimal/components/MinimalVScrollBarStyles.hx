@@ -49,8 +49,8 @@ class MinimalVScrollBarStyles {
 					scrollBar.showDecrementAndIncrementButtons = true;
 				}
 				#end
-				scrollBar.paddingTop = 1.0;
-				scrollBar.paddingBottom = 1.0;
+				scrollBar.paddingTop = theme.smallPadding;
+				scrollBar.paddingBottom = theme.smallPadding;
 			});
 		}
 		#if (feathersui >= "1.3.0")
@@ -71,7 +71,7 @@ class MinimalVScrollBarStyles {
 					icon.height = 3.0;
 					button.icon = icon;
 				}
-				button.setPadding(1.0);
+				button.setPadding(theme.smallPadding);
 			});
 		}
 		if (styleProvider.getStyleFunction(Button, VScrollBar.CHILD_VARIANT_INCREMENT_BUTTON) == null) {
@@ -91,7 +91,7 @@ class MinimalVScrollBarStyles {
 					icon.height = 3.0;
 					button.icon = icon;
 				}
-				button.setPadding(1.0);
+				button.setPadding(theme.smallPadding);
 			});
 		}
 		#end

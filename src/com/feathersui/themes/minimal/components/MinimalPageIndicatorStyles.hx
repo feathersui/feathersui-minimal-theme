@@ -40,8 +40,8 @@ class MinimalPageIndicatorStyles {
 				}
 				if (pages.layout == null) {
 					var layout = new HorizontalLayout();
-					layout.gap = 4.0;
-					layout.setPadding(2.0);
+					layout.gap = theme.largePadding;
+					layout.setPadding(theme.mediumPadding);
 					layout.horizontalAlign = CENTER;
 					layout.verticalAlign = MIDDLE;
 					pages.layout = layout;

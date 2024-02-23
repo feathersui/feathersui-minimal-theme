@@ -88,10 +88,10 @@ class MinimalTextCalloutStyles {
 				}
 				textCallout.embedFonts = theme.embedFonts;
 
-				textCallout.marginTop = 10.0;
-				textCallout.marginRight = 10.0;
-				textCallout.marginBottom = 10.0;
-				textCallout.marginLeft = 10.0;
+				textCallout.marginTop = 2.0 * theme.largePadding;
+				textCallout.marginRight = 2.0 * theme.largePadding;
+				textCallout.marginBottom = 2.0 * theme.largePadding;
+				textCallout.marginLeft = 2.0 * theme.largePadding;
 			});
 		}
 	}

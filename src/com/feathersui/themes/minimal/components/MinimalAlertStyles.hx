@@ -48,20 +48,20 @@ class MinimalAlertStyles {
 				}
 				if (alert.layout == null) {
 					var layout = new HorizontalLayout();
-					layout.setPadding(4.0);
-					layout.gap = 2.0;
+					layout.setPadding(theme.largePadding);
+					layout.gap = theme.mediumPadding;
 					layout.percentWidthResetEnabled = true;
 					alert.layout = layout;
 				}
-				alert.setPadding(1.0);
+				alert.setPadding(theme.smallPadding);
 			});
 		}
 		if (styleProvider.getStyleFunction(ButtonBar, Alert.CHILD_VARIANT_BUTTON_BAR) == null) {
 			styleProvider.setStyleFunction(ButtonBar, Alert.CHILD_VARIANT_BUTTON_BAR, function(buttonBar:ButtonBar):Void {
 				if (buttonBar.layout == null) {
 					var layout = new HorizontalDistributedLayout();
-					layout.setPadding(4.0);
-					layout.gap = 2.0;
+					layout.setPadding(theme.largePadding);
+					layout.gap = theme.mediumPadding;
 					buttonBar.layout = layout;
 				}
 			});

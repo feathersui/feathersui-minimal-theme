@@ -52,9 +52,9 @@ class MinimalComboBoxStyles {
 					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.paddingLeft = 2.0;
-				button.paddingRight = 2.0;
-				button.gap = 2.0;
+				button.paddingLeft = theme.mediumPadding;
+				button.paddingRight = theme.mediumPadding;
+				button.gap = theme.mediumPadding;
 				button.iconPosition = RIGHT;
 				button.gap = Math.POSITIVE_INFINITY;
 				if (button.icon == null) {

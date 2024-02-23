@@ -41,7 +41,7 @@ class MinimalListViewStyles {
 				var focusRectSkin = theme.getFocusRectSkin();
 				listView.focusRectSkin = focusRectSkin;
 			}
-			listView.setFocusPadding(2.0);
+			listView.setFocusPadding(theme.mediumPadding);
 			listView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleListViewWithBorderVariant(listView:ListView):Void {
@@ -59,7 +59,7 @@ class MinimalListViewStyles {
 				}
 				listView.backgroundSkin = backgroundSkin;
 			}
-			listView.setPadding(1.0);
+			listView.setPadding(theme.smallPadding);
 			setDefaultStyles(listView);
 		}
 		function styleListViewWithBorderlessVariant(listView:ListView):Void {
@@ -107,7 +107,7 @@ class MinimalListViewStyles {
 					}
 					listView.backgroundSkin = backgroundSkin;
 				}
-				listView.setPadding(1.0);
+				listView.setPadding(theme.smallPadding);
 				listView.filters = [theme.getShadow(2.0)];
 			});
 		}

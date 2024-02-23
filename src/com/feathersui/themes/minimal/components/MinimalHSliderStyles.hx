@@ -55,9 +55,9 @@ class MinimalHSliderStyles {
 					var focusRectSkin = theme.getFocusRectSkin();
 					slider.focusRectSkin = focusRectSkin;
 				}
-				slider.setFocusPadding(2.0);
-				slider.minimumPadding = 1.0;
-				slider.maximumPadding = 1.0;
+				slider.setFocusPadding(theme.mediumPadding);
+				slider.minimumPadding = theme.smallPadding;
+				slider.maximumPadding = theme.smallPadding;
 			});
 		}
 	}

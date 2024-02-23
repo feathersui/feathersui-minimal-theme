@@ -64,10 +64,10 @@ class MinimalHierarchicalItemRendererStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingLeft = 5.0;
-				itemRenderer.paddingRight = 5.0;
-				itemRenderer.gap = 2.0;
-				itemRenderer.indentation = 6.0;
+				itemRenderer.paddingLeft = theme.smallPadding + theme.largePadding;
+				itemRenderer.paddingRight = theme.smallPadding + theme.largePadding;
+				itemRenderer.gap = theme.mediumPadding;
+				itemRenderer.indentation = theme.mediumPadding + theme.largePadding;
 			});
 		}
 		if (styleProvider.getStyleFunction(ToggleButton, HierarchicalItemRenderer.CHILD_VARIANT_DISCLOSURE_BUTTON) == null) {

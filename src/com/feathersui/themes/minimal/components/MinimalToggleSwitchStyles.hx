@@ -58,9 +58,9 @@ class MinimalToggleSwitchStyles {
 					var focusRectSkin = theme.getFocusRectSkin(PillSkin);
 					toggleSwitch.focusRectSkin = focusRectSkin;
 				}
-				toggleSwitch.setFocusPadding(2.0);
-				toggleSwitch.paddingLeft = 1.0;
-				toggleSwitch.paddingRight = 1.0;
+				toggleSwitch.setFocusPadding(theme.mediumPadding);
+				toggleSwitch.paddingLeft = theme.smallPadding;
+				toggleSwitch.paddingRight = theme.smallPadding;
 			});
 		}
 	}

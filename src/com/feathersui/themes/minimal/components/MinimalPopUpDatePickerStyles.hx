@@ -67,8 +67,8 @@ class MinimalPopUpDatePickerStyles {
 					button.textFormat = theme.getTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.gap = 2.0;
-				button.setPadding(2.0);
+				button.gap = theme.mediumPadding;
+				button.setPadding(theme.mediumPadding);
 			});
 		}
 		if (styleProvider.getStyleFunction(TextInput, PopUpDatePicker.CHILD_VARIANT_TEXT_INPUT) == null) {
@@ -85,8 +85,8 @@ class MinimalPopUpDatePickerStyles {
 					datePicker.backgroundSkin = backgroundSkin;
 				}
 
-				datePicker.setPadding(4.0);
-				datePicker.headerGap = 2.0;
+				datePicker.setPadding(theme.largePadding);
+				datePicker.headerGap = theme.mediumPadding;
 				datePicker.filters = [theme.getShadow(2.0)];
 			});
 		}

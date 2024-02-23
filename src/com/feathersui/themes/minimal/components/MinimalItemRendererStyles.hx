@@ -61,9 +61,9 @@ class MinimalItemRendererStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingLeft = 5.0;
-				itemRenderer.paddingRight = 5.0;
-				itemRenderer.gap = 2.0;
+				itemRenderer.paddingLeft = theme.smallPadding + theme.largePadding;
+				itemRenderer.paddingRight = theme.smallPadding + theme.largePadding;
+				itemRenderer.gap = theme.mediumPadding;
 			});
 		}
 	}

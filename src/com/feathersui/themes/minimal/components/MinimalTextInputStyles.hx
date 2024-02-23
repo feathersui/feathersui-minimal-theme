@@ -44,7 +44,7 @@ class MinimalTextInputStyles {
 					var focusRectSkin = theme.getFocusRectSkin();
 					textInput.focusRectSkin = focusRectSkin;
 				}
-				textInput.setFocusPadding(2.0);
+				textInput.setFocusPadding(theme.mediumPadding);
 				if (textInput.textFormat == null) {
 					textInput.textFormat = theme.getTextFormat(null, null, theme.inputTextColor);
 				}
@@ -55,11 +55,11 @@ class MinimalTextInputStyles {
 					textInput.promptTextFormat = theme.getTextFormat(null, null, theme.promptTextColor);
 				}
 				textInput.embedFonts = theme.embedFonts;
-				textInput.paddingLeft = 2.0;
-				textInput.paddingRight = 2.0;
+				textInput.paddingLeft = theme.mediumPadding;
+				textInput.paddingRight = theme.mediumPadding;
 				textInput.verticalAlign = MIDDLE;
-				textInput.leftViewGap = 2.0;
-				textInput.rightViewGap = 2.0;
+				textInput.leftViewGap = theme.mediumPadding;
+				textInput.rightViewGap = theme.mediumPadding;
 			});
 		}
 		if (styleProvider.getStyleFunction(TextInput, TextInput.VARIANT_SEARCH) == null) {

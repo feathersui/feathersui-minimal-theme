@@ -98,6 +98,10 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 	private var headingFontSize:Int;
 	private var detailFontSize:Int;
 
+	private var smallPadding:Float;
+	private var mediumPadding:Float;
+	private var largePadding:Float;
+
 	private var _darkMode:Bool = false;
 
 	@:bindable("stylesChange")
@@ -122,6 +126,19 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 		_darkMode = darkMode;
 		refreshStyle();
 		refreshFontSize();
+		refreshPaddings();
+	}
+
+	private function refreshPaddings():Void {
+		if (DeviceUtil.isDesktop()) {
+			smallPadding = 1.0;
+			mediumPadding = 2.0;
+			largePadding = 4.0;
+		} else {
+			smallPadding = 2.0;
+			mediumPadding = 4.0;
+			largePadding = 8.0;
+		}
 	}
 
 	private function refreshFontSize():Void {

@@ -66,7 +66,7 @@ class MinimalTreeGridViewStyles {
 				var focusRectSkin = theme.getFocusRectSkin();
 				treeGridView.focusRectSkin = focusRectSkin;
 			}
-			treeGridView.setFocusPadding(2.0);
+			treeGridView.setFocusPadding(theme.mediumPadding);
 			treeGridView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleTreeGridViewWithBorderVariant(treeGridView:TreeGridView):Void {
@@ -84,7 +84,7 @@ class MinimalTreeGridViewStyles {
 				}
 				treeGridView.backgroundSkin = backgroundSkin;
 			}
-			treeGridView.setPadding(1.0);
+			treeGridView.setPadding(theme.smallPadding);
 			setDefaultStyles(treeGridView);
 		}
 		function styleTreeGridViewWithBorderlessVariant(treeGridView:TreeGridView):Void {
@@ -193,9 +193,9 @@ class MinimalTreeGridViewStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingLeft = 5.0;
-				itemRenderer.paddingRight = 5.0;
-				itemRenderer.gap = 2.0;
+				itemRenderer.paddingLeft = theme.smallPadding + theme.largePadding;
+				itemRenderer.paddingRight = theme.smallPadding + theme.largePadding;
+				itemRenderer.gap = theme.mediumPadding;
 			});
 		}
 	}
