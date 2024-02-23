@@ -38,7 +38,10 @@ class MinimalTabBarStyles {
 				var isDesktop = DeviceUtil.isDesktop();
 
 				if (tabBar.backgroundSkin == null) {
-					tabBar.backgroundSkin = theme.getBackSkin();
+					var backgroundSkin = theme.getBackSkin();
+					backgroundSkin.width = 16.0;
+					backgroundSkin.height = 16.0;
+					tabBar.backgroundSkin = backgroundSkin;
 				}
 				if (tabBar.focusRectSkin == null) {
 					var focusRectSkin = theme.getFocusRectSkin();
@@ -71,7 +74,7 @@ class MinimalTabBarStyles {
 					backgroundSkin.cornerRadiusPosition = TOP;
 					backgroundSkin.border = None;
 					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 20.0;
+					backgroundSkin.height = 16.0;
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.focusRectSkin == null) {
@@ -86,8 +89,6 @@ class MinimalTabBarStyles {
 					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.paddingTop = 1.0;
-				button.paddingBottom = 1.0;
 				button.paddingLeft = 2.0;
 				button.paddingRight = 2.0;
 				button.gap = 2.0;
