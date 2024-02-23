@@ -41,10 +41,7 @@ class MinimalPageIndicatorStyles {
 				if (pages.layout == null) {
 					var layout = new HorizontalLayout();
 					layout.gap = 4.0;
-					layout.paddingTop = 2.0;
-					layout.paddingRight = 2.0;
-					layout.paddingBottom = 2.0;
-					layout.paddingLeft = 2.0;
+					layout.setPadding(2.0);
 					layout.horizontalAlign = CENTER;
 					layout.verticalAlign = MIDDLE;
 					pages.layout = layout;

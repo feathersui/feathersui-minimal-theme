@@ -239,10 +239,7 @@ class MinimalDatePickerStyles {
 				}
 				dateRenderer.horizontalAlign = CENTER;
 				dateRenderer.verticalAlign = MIDDLE;
-				dateRenderer.paddingTop = 2.0;
-				dateRenderer.paddingRight = 2.0;
-				dateRenderer.paddingBottom = 2.0;
-				dateRenderer.paddingLeft = 2.0;
+				dateRenderer.setPadding(2.0);
 			});
 		}
 		if (styleProvider.getStyleFunction(ItemRenderer, DatePicker.CHILD_VARIANT_MUTED_DATE_RENDERER) == null) {
@@ -278,10 +275,7 @@ class MinimalDatePickerStyles {
 				}
 				dateRenderer.horizontalAlign = CENTER;
 				dateRenderer.verticalAlign = MIDDLE;
-				dateRenderer.paddingTop = 2.0;
-				dateRenderer.paddingRight = 2.0;
-				dateRenderer.paddingBottom = 2.0;
-				dateRenderer.paddingLeft = 2.0;
+				dateRenderer.setPadding(2.0);
 			});
 		}
 	}

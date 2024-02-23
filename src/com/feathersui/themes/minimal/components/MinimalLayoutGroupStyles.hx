@@ -47,10 +47,7 @@ class MinimalLayoutGroupStyles {
 
 				if (toolBar.layout == null) {
 					var layout = new HorizontalLayout();
-					layout.paddingTop = 2.0;
-					layout.paddingRight = 2.0;
-					layout.paddingBottom = 2.0;
-					layout.paddingLeft = 2.0;
+					layout.setPadding(2.0);
 					layout.gap = 2.0;
 					layout.horizontalAlign = LEFT;
 					layout.verticalAlign = MIDDLE;

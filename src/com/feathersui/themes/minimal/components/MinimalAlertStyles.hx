@@ -48,10 +48,7 @@ class MinimalAlertStyles {
 				}
 				if (alert.layout == null) {
 					var layout = new HorizontalLayout();
-					layout.paddingTop = 4.0;
-					layout.paddingRight = 4.0;
-					layout.paddingBottom = 4.0;
-					layout.paddingLeft = 4.0;
+					layout.setPadding(4.0);
 					layout.gap = 2.0;
 					layout.percentWidthResetEnabled = true;
 					alert.layout = layout;
@@ -63,10 +60,7 @@ class MinimalAlertStyles {
 			styleProvider.setStyleFunction(ButtonBar, Alert.CHILD_VARIANT_BUTTON_BAR, function(buttonBar:ButtonBar):Void {
 				if (buttonBar.layout == null) {
 					var layout = new HorizontalDistributedLayout();
-					layout.paddingTop = 4.0;
-					layout.paddingRight = 4.0;
-					layout.paddingBottom = 4.0;
-					layout.paddingLeft = 4.0;
+					layout.setPadding(4.0);
 					layout.gap = 2.0;
 					buttonBar.layout = layout;
 				}
