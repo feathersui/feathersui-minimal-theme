@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.ToggleButtonState;
 import feathers.controls.dataRenderers.ItemRenderer;
@@ -29,6 +30,7 @@ class MinimalItemRendererStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(ItemRenderer, null) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, null, function(itemRenderer:ItemRenderer):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (itemRenderer.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
@@ -36,8 +38,13 @@ class MinimalItemRendererStyles {
 					backgroundSkin.selectedFill = SolidColor(theme.listSelectedColor);
 					backgroundSkin.setFillForState(ToggleButtonState.HOVER(false), SolidColor(theme.listRollOverColor));
 					backgroundSkin.setFillForState(ToggleButtonState.DOWN(false), SolidColor(theme.listSelectedColor));
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 20.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 40.0;
+					}
 					itemRenderer.backgroundSkin = backgroundSkin;
 				}
 				if (itemRenderer.textFormat == null) {
@@ -54,8 +61,6 @@ class MinimalItemRendererStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingTop = 1.0;
-				itemRenderer.paddingBottom = 1.0;
 				itemRenderer.paddingLeft = 5.0;
 				itemRenderer.paddingRight = 5.0;
 				itemRenderer.gap = 2.0;

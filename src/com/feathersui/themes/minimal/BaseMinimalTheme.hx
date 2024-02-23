@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal;
 
+import feathers.utils.DeviceUtil;
 import feathers.skins.RectangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.style.IDarkModeTheme;
@@ -93,9 +94,9 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 
 	private var embedFonts:Bool = true;
 	private var fontName:String = "PF Ronda Seven";
-	private var fontSize:Int = 8;
-	private var headingFontSize:Int = 9;
-	private var detailFontSize:Int = 7;
+	private var fontSize:Int;
+	private var headingFontSize:Int;
+	private var detailFontSize:Int;
 
 	private var _darkMode:Bool = false;
 
@@ -120,6 +121,19 @@ class BaseMinimalTheme extends ClassVariantTheme implements IDarkModeTheme {
 		super();
 		_darkMode = darkMode;
 		refreshStyle();
+		refreshFontSize();
+	}
+
+	private function refreshFontSize():Void {
+		if (DeviceUtil.isDesktop()) {
+			fontSize = 8;
+			headingFontSize = 9;
+			detailFontSize = 7;
+		} else {
+			fontSize = 12;
+			headingFontSize = 13;
+			detailFontSize = 11;
+		}
 	}
 
 	private function refreshStyle():Void {

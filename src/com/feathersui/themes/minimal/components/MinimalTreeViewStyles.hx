@@ -45,24 +45,36 @@ class MinimalTreeViewStyles {
 			treeView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleTreeViewWithBorderVariant(treeView:TreeView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (treeView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				treeView.backgroundSkin = backgroundSkin;
 			}
 			treeView.setPadding(1.0);
 			setDefaultStyles(treeView);
 		}
 		function styleTreeViewWithBorderlessVariant(treeView:TreeView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (treeView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				treeView.backgroundSkin = backgroundSkin;
 			}
 			setDefaultStyles(treeView);

@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 #if (feathersui >= "1.3.0")
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.ToggleButtonState;
@@ -30,6 +31,7 @@ class MinimalTreeGridViewRowRendererStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(TreeGridViewRowRenderer, null) == null) {
 			styleProvider.setStyleFunction(TreeGridViewRowRenderer, null, function(rowRenderer:TreeGridViewRowRenderer):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (rowRenderer.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
@@ -37,8 +39,13 @@ class MinimalTreeGridViewRowRendererStyles {
 					backgroundSkin.selectedFill = SolidColor(theme.listSelectedColor);
 					backgroundSkin.setFillForState(ToggleButtonState.HOVER(false), SolidColor(theme.listRollOverColor));
 					backgroundSkin.setFillForState(ToggleButtonState.DOWN(false), SolidColor(theme.listSelectedColor));
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 20.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 40.0;
+					}
 					rowRenderer.backgroundSkin = backgroundSkin;
 				}
 			});

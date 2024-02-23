@@ -46,24 +46,36 @@ class MinimalGroupListViewStyles {
 			listView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleGroupListViewWithBorderVariant(listView:GroupListView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (listView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				listView.backgroundSkin = backgroundSkin;
 			}
 			listView.setPadding(1.0);
 			setDefaultStyles(listView);
 		}
 		function styleGroupListViewWithBorderlessVariant(listView:GroupListView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (listView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				listView.backgroundSkin = backgroundSkin;
 			}
 			setDefaultStyles(listView);
@@ -86,12 +98,18 @@ class MinimalGroupListViewStyles {
 		}
 		if (styleProvider.getStyleFunction(ItemRenderer, GroupListView.CHILD_VARIANT_HEADER_RENDERER) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, GroupListView.CHILD_VARIANT_HEADER_RENDERER, function(itemRenderer:ItemRenderer):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (itemRenderer.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listHeadingColor);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 20.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 40.0;
+					}
 					itemRenderer.backgroundSkin = backgroundSkin;
 				}
 				if (itemRenderer.textFormat == null) {
@@ -102,8 +120,6 @@ class MinimalGroupListViewStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingTop = 1.0;
-				itemRenderer.paddingBottom = 1.0;
 				itemRenderer.paddingLeft = 5.0;
 				itemRenderer.paddingRight = 5.0;
 				itemRenderer.gap = 2.0;

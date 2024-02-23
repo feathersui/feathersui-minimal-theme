@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.Header;
 import feathers.style.Theme;
@@ -28,12 +29,18 @@ class MinimalHeaderStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(Header, null) == null) {
 			styleProvider.setStyleFunction(Header, null, function(header:Header):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (header.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.panelColor);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 32.0;
+					}
 					header.backgroundSkin = backgroundSkin;
 				}
 				if (header.textFormat == null) {

@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import feathers.controls.ButtonBar;
 import feathers.layout.HorizontalLayout;
 import feathers.style.Theme;
@@ -30,9 +31,10 @@ class MinimalButtonBarStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(ButtonBar, null) == null) {
 			styleProvider.setStyleFunction(ButtonBar, null, function(buttonBar:ButtonBar):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (buttonBar.layout == null) {
 					var layout = new HorizontalLayout();
-					layout.gap = 3.0;
+					layout.gap = isDesktop ? 3.0 : 6.0;
 					buttonBar.layout = layout;
 				}
 			});

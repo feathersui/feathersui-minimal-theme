@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.LayoutGroup;
 import feathers.layout.HorizontalLayout;
@@ -29,12 +30,18 @@ class MinimalLayoutGroupStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(LayoutGroup, LayoutGroup.VARIANT_TOOL_BAR) == null) {
 			styleProvider.setStyleFunction(LayoutGroup, LayoutGroup.VARIANT_TOOL_BAR, function(toolBar:LayoutGroup):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (toolBar.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.panelColor);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 32.0;
+					}
 					toolBar.backgroundSkin = backgroundSkin;
 				}
 

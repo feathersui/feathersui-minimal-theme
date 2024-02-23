@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import feathers.skins.PillSkin;
 import com.feathersui.themes.minimal.skins.MinimalPillSkin;
 import feathers.controls.ToggleSwitch;
@@ -29,17 +30,28 @@ class MinimalToggleSwitchStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(ToggleSwitch, null) == null) {
 			styleProvider.setStyleFunction(ToggleSwitch, null, function(toggleSwitch:ToggleSwitch):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (toggleSwitch.trackSkin == null) {
 					var trackSkin = theme.getBackSkin(MinimalPillSkin);
-					trackSkin.width = 30.0;
-					trackSkin.height = 16.0;
+					if (isDesktop) {
+						trackSkin.width = 30.0;
+						trackSkin.height = 16.0;
+					} else {
+						trackSkin.width = 60.0;
+						trackSkin.height = 32.0;
+					}
 					toggleSwitch.trackSkin = trackSkin;
 				}
 				if (toggleSwitch.thumbSkin == null) {
 					var thumbSkin = theme.getFaceSkin(MinimalPillSkin);
 					thumbSkin.selectedFill = null;
-					thumbSkin.width = 14.0;
-					thumbSkin.height = 14.0;
+					if (isDesktop) {
+						thumbSkin.width = 14.0;
+						thumbSkin.height = 14.0;
+					} else {
+						thumbSkin.width = 28.0;
+						thumbSkin.height = 28.0;
+					}
 					toggleSwitch.thumbSkin = thumbSkin;
 				}
 				if (toggleSwitch.focusRectSkin == null) {

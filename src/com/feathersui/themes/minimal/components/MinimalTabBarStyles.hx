@@ -36,11 +36,15 @@ class MinimalTabBarStyles {
 		if (styleProvider.getStyleFunction(TabBar, null) == null) {
 			styleProvider.setStyleFunction(TabBar, null, function(tabBar:TabBar):Void {
 				var isDesktop = DeviceUtil.isDesktop();
-
 				if (tabBar.backgroundSkin == null) {
 					var backgroundSkin = theme.getBackSkin();
-					backgroundSkin.width = 16.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 16.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 32.0;
+						backgroundSkin.height = 32.0;
+					}
 					tabBar.backgroundSkin = backgroundSkin;
 				}
 				if (tabBar.focusRectSkin == null) {
@@ -64,6 +68,7 @@ class MinimalTabBarStyles {
 
 		if (styleProvider.getStyleFunction(ToggleButton, TabBar.CHILD_VARIANT_TAB) == null) {
 			styleProvider.setStyleFunction(ToggleButton, TabBar.CHILD_VARIANT_TAB, function(button:ToggleButton):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MinimalTabSkin();
 					backgroundSkin.fill = None;
@@ -73,8 +78,13 @@ class MinimalTabBarStyles {
 					backgroundSkin.cornerRadius = 3.0;
 					backgroundSkin.cornerRadiusPosition = TOP;
 					backgroundSkin.border = None;
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 32.0;
+					}
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.focusRectSkin == null) {

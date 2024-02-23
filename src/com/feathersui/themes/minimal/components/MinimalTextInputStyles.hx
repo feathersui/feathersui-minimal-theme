@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import feathers.controls.TextInput;
 import feathers.style.Theme;
 
@@ -27,10 +28,16 @@ class MinimalTextInputStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(TextInput, null) == null) {
 			styleProvider.setStyleFunction(TextInput, null, function(textInput:TextInput):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (textInput.backgroundSkin == null) {
 					var backgroundSkin = theme.getBackSkin(null, theme.backgroundColor);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 80.0;
+						backgroundSkin.height = 32.0;
+					}
 					textInput.backgroundSkin = backgroundSkin;
 				}
 				if (textInput.focusRectSkin == null) {

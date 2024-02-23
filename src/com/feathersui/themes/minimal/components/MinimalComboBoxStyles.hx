@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
 import feathers.controls.ComboBox;
@@ -32,10 +33,16 @@ class MinimalComboBoxStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(Button, ComboBox.CHILD_VARIANT_BUTTON) == null) {
 			styleProvider.setStyleFunction(Button, ComboBox.CHILD_VARIANT_BUTTON, function(button:Button):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.width = 20.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 16.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 32.0;
+						backgroundSkin.height = 32.0;
+					}
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.textFormat == null) {
@@ -45,8 +52,6 @@ class MinimalComboBoxStyles {
 					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.paddingTop = 1.0;
-				button.paddingBottom = 1.0;
 				button.paddingLeft = 2.0;
 				button.paddingRight = 2.0;
 				button.gap = 2.0;

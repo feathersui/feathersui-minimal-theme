@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalTriangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import feathers.controls.dataRenderers.SortOrderHeaderRenderer;
@@ -29,12 +30,18 @@ class MinimalSortOrderHeaderRendererStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(SortOrderHeaderRenderer, null) == null) {
 			styleProvider.setStyleFunction(SortOrderHeaderRenderer, null, function(headerRenderer:SortOrderHeaderRenderer):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (headerRenderer.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listHeadingColor);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 20.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 40.0;
+					}
 					headerRenderer.backgroundSkin = backgroundSkin;
 				}
 				if (headerRenderer.sortAscendingIcon == null) {
@@ -63,8 +70,6 @@ class MinimalSortOrderHeaderRendererStyles {
 				}
 				headerRenderer.embedFonts = theme.embedFonts;
 				headerRenderer.horizontalAlign = LEFT;
-				headerRenderer.paddingTop = 1.0;
-				headerRenderer.paddingBottom = 1.0;
 				headerRenderer.paddingLeft = 5.0;
 				headerRenderer.paddingRight = 5.0;
 				headerRenderer.gap = 2.0;

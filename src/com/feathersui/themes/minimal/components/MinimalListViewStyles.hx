@@ -45,24 +45,36 @@ class MinimalListViewStyles {
 			listView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleListViewWithBorderVariant(listView:ListView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (listView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				listView.backgroundSkin = backgroundSkin;
 			}
 			listView.setPadding(1.0);
 			setDefaultStyles(listView);
 		}
 		function styleListViewWithBorderlessVariant(listView:ListView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (listView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				listView.backgroundSkin = backgroundSkin;
 			}
 			setDefaultStyles(listView);
@@ -75,6 +87,7 @@ class MinimalListViewStyles {
 		}
 		if (styleProvider.getStyleFunction(ListView, ListView.VARIANT_POP_UP) == null) {
 			styleProvider.setStyleFunction(ListView, ListView.VARIANT_POP_UP, function(listView:ListView):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (listView.layout == null) {
 					var layout = new VerticalListLayout();
 					layout.requestedMinRowCount = 1.0;
@@ -85,8 +98,13 @@ class MinimalListViewStyles {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = SolidColor(1.0, theme.backgroundColor);
 					backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 32.0;
+					}
 					listView.backgroundSkin = backgroundSkin;
 				}
 				listView.setPadding(1.0);

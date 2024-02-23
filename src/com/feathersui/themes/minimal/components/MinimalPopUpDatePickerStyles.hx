@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
@@ -36,10 +37,16 @@ class MinimalPopUpDatePickerStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(Button, PopUpDatePicker.CHILD_VARIANT_BUTTON) == null) {
 			styleProvider.setStyleFunction(Button, PopUpDatePicker.CHILD_VARIANT_BUTTON, function(button:Button):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.width = 16.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 16.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 32.0;
+						backgroundSkin.height = 32.0;
+					}
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.icon == null) {

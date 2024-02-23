@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
 import feathers.style.Theme;
@@ -27,10 +28,16 @@ class MinimalButtonStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(Button, null) == null) {
 			styleProvider.setStyleFunction(Button, null, function(button:Button):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 20.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 40.0;
+					}
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.focusRectSkin == null) {
@@ -45,8 +52,6 @@ class MinimalButtonStyles {
 					button.disabledTextFormat = theme.getDisabledTextFormat();
 				}
 				button.embedFonts = theme.embedFonts;
-				button.paddingTop = 1.0;
-				button.paddingBottom = 1.0;
 				button.paddingLeft = 2.0;
 				button.paddingRight = 2.0;
 				button.gap = 2.0;

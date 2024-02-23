@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
 import feathers.controls.NumericStepper;
@@ -40,10 +41,16 @@ class MinimalNumericStepperStyles {
 		}
 		if (styleProvider.getStyleFunction(Button, NumericStepper.CHILD_VARIANT_DECREMENT_BUTTON) == null) {
 			styleProvider.setStyleFunction(Button, NumericStepper.CHILD_VARIANT_DECREMENT_BUTTON, function(button:Button):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.width = 16.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 16.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 32.0;
+						backgroundSkin.height = 32.0;
+					}
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.textFormat == null) {
@@ -58,10 +65,16 @@ class MinimalNumericStepperStyles {
 		}
 		if (styleProvider.getStyleFunction(Button, NumericStepper.CHILD_VARIANT_INCREMENT_BUTTON) == null) {
 			styleProvider.setStyleFunction(Button, NumericStepper.CHILD_VARIANT_INCREMENT_BUTTON, function(button:Button):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.width = 16.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 16.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 32.0;
+						backgroundSkin.height = 32.0;
+					}
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.textFormat == null) {
@@ -76,10 +89,16 @@ class MinimalNumericStepperStyles {
 		}
 		if (styleProvider.getStyleFunction(TextInput, NumericStepper.CHILD_VARIANT_TEXT_INPUT) == null) {
 			styleProvider.setStyleFunction(TextInput, NumericStepper.CHILD_VARIANT_TEXT_INPUT, function(textInput:TextInput):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (textInput.backgroundSkin == null) {
 					var backgroundSkin = theme.getBackSkin(null, theme.backgroundColor);
-					backgroundSkin.width = 48.0;
-					backgroundSkin.height = 16.0;
+					if (isDesktop) {
+						backgroundSkin.width = 48.0;
+						backgroundSkin.height = 16.0;
+					} else {
+						backgroundSkin.width = 96.0;
+						backgroundSkin.height = 32.0;
+					}
 					textInput.backgroundSkin = backgroundSkin;
 				}
 				if (textInput.textFormat == null) {

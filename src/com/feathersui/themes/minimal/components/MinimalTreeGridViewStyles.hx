@@ -70,24 +70,36 @@ class MinimalTreeGridViewStyles {
 			treeGridView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleTreeGridViewWithBorderVariant(treeGridView:TreeGridView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (treeGridView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				treeGridView.backgroundSkin = backgroundSkin;
 			}
 			treeGridView.setPadding(1.0);
 			setDefaultStyles(treeGridView);
 		}
 		function styleTreeGridViewWithBorderlessVariant(treeGridView:TreeGridView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (treeGridView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				treeGridView.backgroundSkin = backgroundSkin;
 			}
 			setDefaultStyles(treeGridView);
@@ -112,14 +124,20 @@ class MinimalTreeGridViewStyles {
 		if (styleProvider.getStyleFunction(HierarchicalItemRenderer, TreeGridView.CHILD_VARIANT_CELL_RENDERER) == null) {
 			styleProvider.setStyleFunction(HierarchicalItemRenderer, TreeGridView.CHILD_VARIANT_CELL_RENDERER,
 				function(itemRenderer:HierarchicalItemRenderer):Void {
+					var isDesktop = DeviceUtil.isDesktop();
 					if (itemRenderer.backgroundSkin == null) {
 						// a transparent background skin ensures that CELL_TRIGGER
 						// gets dispatched
 						var backgroundSkin = new MinimalRectangleSkin();
 						backgroundSkin.fill = SolidColor(0xff00ff, 0.0);
 						backgroundSkin.border = None;
-						backgroundSkin.width = 20.0;
-						backgroundSkin.height = 20.0;
+						if (isDesktop) {
+							backgroundSkin.width = 20.0;
+							backgroundSkin.height = 20.0;
+						} else {
+							backgroundSkin.width = 40.0;
+							backgroundSkin.height = 40.0;
+						}
 						itemRenderer.backgroundSkin = backgroundSkin;
 					}
 					// except for the background skin, use other default styles
@@ -153,12 +171,18 @@ class MinimalTreeGridViewStyles {
 		}
 		if (styleProvider.getStyleFunction(ItemRenderer, TreeGridView.CHILD_VARIANT_HEADER_RENDERER) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, TreeGridView.CHILD_VARIANT_HEADER_RENDERER, function(itemRenderer:ItemRenderer):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (itemRenderer.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listHeadingColor);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 20.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 40.0;
+					}
 					itemRenderer.backgroundSkin = backgroundSkin;
 				}
 				if (itemRenderer.textFormat == null) {
@@ -169,8 +193,6 @@ class MinimalTreeGridViewStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingTop = 1.0;
-				itemRenderer.paddingBottom = 1.0;
 				itemRenderer.paddingLeft = 5.0;
 				itemRenderer.paddingRight = 5.0;
 				itemRenderer.gap = 2.0;

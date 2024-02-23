@@ -69,24 +69,36 @@ class MinimalGridViewStyles {
 			gridView.filters = [theme.getShadow(2.0, true)];
 		}
 		function styleGridViewWithBorderVariant(gridView:GridView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (gridView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = SolidColor(1.0, 0x000000, 0.1);
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				gridView.backgroundSkin = backgroundSkin;
 			}
 			gridView.setPadding(1.0);
 			setDefaultStyles(gridView);
 		}
 		function styleGridViewWithBorderlessVariant(gridView:GridView):Void {
+			var isDesktop = DeviceUtil.isDesktop();
 			if (gridView.backgroundSkin == null) {
 				var backgroundSkin = new MinimalRectangleSkin();
 				backgroundSkin.border = None;
 				backgroundSkin.fill = SolidColor(theme.listDefaultColor);
-				backgroundSkin.width = 100.0;
-				backgroundSkin.height = 16.0;
+				if (isDesktop) {
+					backgroundSkin.width = 100.0;
+					backgroundSkin.height = 16.0;
+				} else {
+					backgroundSkin.width = 120.0;
+					backgroundSkin.height = 32.0;
+				}
 				gridView.backgroundSkin = backgroundSkin;
 			}
 			setDefaultStyles(gridView);
@@ -110,14 +122,20 @@ class MinimalGridViewStyles {
 		#if (feathersui >= "1.3.0")
 		if (styleProvider.getStyleFunction(ItemRenderer, GridView.CHILD_VARIANT_CELL_RENDERER) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, GridView.CHILD_VARIANT_CELL_RENDERER, function(itemRenderer:ItemRenderer):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (itemRenderer.backgroundSkin == null) {
 					// a transparent background skin ensures that CELL_TRIGGER
 					// gets dispatched
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.fill = SolidColor(0xff00ff, 0.0);
 					backgroundSkin.border = None;
-					backgroundSkin.width = 20.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 20.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 40.0;
+					}
 					itemRenderer.backgroundSkin = backgroundSkin;
 				}
 				// except for the background skin, use other default styles
@@ -151,12 +169,18 @@ class MinimalGridViewStyles {
 		}
 		if (styleProvider.getStyleFunction(ItemRenderer, GridView.CHILD_VARIANT_HEADER_RENDERER) == null) {
 			styleProvider.setStyleFunction(ItemRenderer, GridView.CHILD_VARIANT_HEADER_RENDERER, function(itemRenderer:ItemRenderer):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (itemRenderer.backgroundSkin == null) {
 					var backgroundSkin = new MinimalRectangleSkin();
 					backgroundSkin.border = None;
 					backgroundSkin.fill = SolidColor(theme.listHeadingColor);
-					backgroundSkin.width = 100.0;
-					backgroundSkin.height = 20.0;
+					if (isDesktop) {
+						backgroundSkin.width = 100.0;
+						backgroundSkin.height = 20.0;
+					} else {
+						backgroundSkin.width = 120.0;
+						backgroundSkin.height = 40.0;
+					}
 					itemRenderer.backgroundSkin = backgroundSkin;
 				}
 				if (itemRenderer.textFormat == null) {
@@ -167,8 +191,6 @@ class MinimalGridViewStyles {
 				}
 				itemRenderer.embedFonts = theme.embedFonts;
 				itemRenderer.horizontalAlign = LEFT;
-				itemRenderer.paddingTop = 1.0;
-				itemRenderer.paddingBottom = 1.0;
 				itemRenderer.paddingLeft = 5.0;
 				itemRenderer.paddingRight = 5.0;
 				itemRenderer.gap = 2.0;

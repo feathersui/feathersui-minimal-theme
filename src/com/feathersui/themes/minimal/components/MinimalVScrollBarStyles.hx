@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalTriangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
 import feathers.controls.Button;
@@ -30,6 +31,7 @@ class MinimalVScrollBarStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(VScrollBar, null) == null) {
 			styleProvider.setStyleFunction(VScrollBar, null, function(scrollBar:VScrollBar):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (scrollBar.trackSkin == null) {
 					var trackSkin = theme.getBackSkin();
 					trackSkin.width = 10.0;
@@ -43,7 +45,9 @@ class MinimalVScrollBarStyles {
 					scrollBar.thumbSkin = thumbSkin;
 				}
 				#if (feathersui >= "1.3.0")
-				scrollBar.showDecrementAndIncrementButtons = true;
+				if (isDesktop) {
+					scrollBar.showDecrementAndIncrementButtons = true;
+				}
 				#end
 				scrollBar.paddingTop = 1.0;
 				scrollBar.paddingBottom = 1.0;
