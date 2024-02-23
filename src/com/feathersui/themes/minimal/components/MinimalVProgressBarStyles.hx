@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import feathers.controls.VProgressBar;
 import feathers.style.Theme;
 
@@ -27,16 +28,27 @@ class MinimalVProgressBarStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(VProgressBar, null) == null) {
 			styleProvider.setStyleFunction(VProgressBar, null, function(progress:VProgressBar):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (progress.backgroundSkin == null) {
 					var backgroundSkin = theme.getBackSkin();
-					backgroundSkin.width = 10.0;
-					backgroundSkin.height = 100.0;
+					if (isDesktop) {
+						backgroundSkin.width = 10.0;
+						backgroundSkin.height = 100.0;
+					} else {
+						backgroundSkin.width = 20.0;
+						backgroundSkin.height = 120.0;
+					}
 					progress.backgroundSkin = backgroundSkin;
 				}
 				if (progress.fillSkin == null) {
 					var fillSkin = theme.getFaceSkin();
-					fillSkin.width = 8.0;
-					fillSkin.height = 8.0;
+					if (isDesktop) {
+						fillSkin.width = 8.0;
+						fillSkin.height = 8.0;
+					} else {
+						fillSkin.width = 16.0;
+						fillSkin.height = 16.0;
+					}
 					progress.fillSkin = fillSkin;
 				}
 				progress.setPadding(1.0);

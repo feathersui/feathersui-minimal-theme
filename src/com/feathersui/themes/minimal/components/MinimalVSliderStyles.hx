@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import feathers.controls.VSlider;
 import feathers.style.Theme;
 
@@ -27,16 +28,27 @@ class MinimalVSliderStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(VSlider, null) == null) {
 			styleProvider.setStyleFunction(VSlider, null, function(slider:VSlider):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (slider.trackSkin == null) {
 					var trackSkin = theme.getBackSkin();
-					trackSkin.width = 10.0;
-					trackSkin.height = 100.0;
+					if (isDesktop) {
+						trackSkin.width = 10.0;
+						trackSkin.height = 100.0;
+					} else {
+						trackSkin.width = 20.0;
+						trackSkin.height = 120.0;
+					}
 					slider.trackSkin = trackSkin;
 				}
 				if (slider.thumbSkin == null) {
 					var thumbSkin = theme.getFaceSkin();
-					thumbSkin.width = 8.0;
-					thumbSkin.height = 8.0;
+					if (isDesktop) {
+						thumbSkin.width = 8.0;
+						thumbSkin.height = 8.0;
+					} else {
+						thumbSkin.width = 16.0;
+						thumbSkin.height = 16.0;
+					}
 					slider.thumbSkin = thumbSkin;
 				}
 				if (slider.focusRectSkin == null) {

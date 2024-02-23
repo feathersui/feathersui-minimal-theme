@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalToggleIconSkin;
 import feathers.controls.PageIndicator;
 import feathers.controls.ToggleButton;
@@ -52,11 +53,17 @@ class MinimalPageIndicatorStyles {
 		}
 		if (styleProvider.getStyleFunction(ToggleButton, PageIndicator.CHILD_VARIANT_TOGGLE_BUTTON) == null) {
 			styleProvider.setStyleFunction(ToggleButton, PageIndicator.CHILD_VARIANT_TOGGLE_BUTTON, function(button:ToggleButton):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MinimalToggleIconSkin(theme);
 					backgroundSkin.padding = 1.0;
-					backgroundSkin.width = 8.0;
-					backgroundSkin.height = 8.0;
+					if (isDesktop) {
+						backgroundSkin.width = 8.0;
+						backgroundSkin.height = 8.0;
+					} else {
+						backgroundSkin.width = 16.0;
+						backgroundSkin.height = 16.0;
+					}
 					button.backgroundSkin = backgroundSkin;
 				}
 			});
