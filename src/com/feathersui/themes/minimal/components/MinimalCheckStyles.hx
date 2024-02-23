@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalToggleIconSkin;
 import feathers.controls.Check;
 import feathers.style.Theme;
@@ -27,10 +28,16 @@ class MinimalCheckStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(Check, null) == null) {
 			styleProvider.setStyleFunction(Check, null, function(check:Check):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (check.icon == null) {
 					var icon = new MinimalToggleIconSkin(theme);
-					icon.width = 10.0;
-					icon.height = 10.0;
+					if (isDesktop) {
+						icon.width = 10.0;
+						icon.height = 10.0;
+					} else {
+						icon.width = 20.0;
+						icon.height = 20.0;
+					}
 					check.icon = icon;
 				}
 				if (check.focusRectSkin == null) {

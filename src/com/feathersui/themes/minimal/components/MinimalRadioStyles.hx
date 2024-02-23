@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalCircleSkin;
 import com.feathersui.themes.minimal.skins.MinimalToggleIconSkin;
 import feathers.controls.Radio;
@@ -29,10 +30,16 @@ class MinimalRadioStyles {
 		var styleProvider = theme.styleProvider;
 		if (styleProvider.getStyleFunction(Radio, null) == null) {
 			styleProvider.setStyleFunction(Radio, null, function(radio:Radio):Void {
+				var isDesktop = DeviceUtil.isDesktop();
 				if (radio.icon == null) {
 					var icon = new MinimalToggleIconSkin(theme, MinimalCircleSkin);
-					icon.width = 10.0;
-					icon.height = 10.0;
+					if (isDesktop) {
+						icon.width = 10.0;
+						icon.height = 10.0;
+					} else {
+						icon.width = 20.0;
+						icon.height = 20.0;
+					}
 					radio.icon = icon;
 				}
 				if (radio.focusRectSkin == null) {
