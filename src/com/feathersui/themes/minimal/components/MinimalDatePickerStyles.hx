@@ -64,10 +64,9 @@ class MinimalDatePickerStyles {
 				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MultiSkin();
-					var buttonSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.defaultView = buttonSkin;
+					backgroundSkin.defaultView = new MinimalButtonSkin(theme);
+					backgroundSkin.disabledView = new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None);
 					backgroundSkin.setViewForState(ButtonState.UP, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
-					backgroundSkin.setViewForState(ButtonState.DISABLED, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
 					if (isDesktop) {
 						backgroundSkin.width = 16.0;
 						backgroundSkin.height = 16.0;
@@ -78,30 +77,17 @@ class MinimalDatePickerStyles {
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.icon == null) {
-					var icon = new Shape();
-					icon.graphics.beginFill(0xff00ff, 0.0);
-					icon.graphics.drawRect(0.0, 0.0, 8.0, 8.0);
-					icon.graphics.endFill();
-					icon.graphics.beginFill(theme.labelTextColor);
-					icon.graphics.moveTo(2.0, 4.0);
-					icon.graphics.lineTo(6.0, 0.0);
-					icon.graphics.lineTo(6.0, 8.0);
-					icon.graphics.lineTo(2.0, 4.0);
-					icon.graphics.endFill();
-					button.icon = icon;
-				}
-				if (button.getIconForState(ButtonState.DISABLED) == null) {
+					var icon = new MultiSkin();
+
+					var defaultIcon = new Shape();
+					drawDecrementMonthIcon(defaultIcon, theme.labelTextColor);
+					icon.defaultView = defaultIcon;
+
 					var disabledIcon = new Shape();
-					disabledIcon.graphics.beginFill(0xff00ff, 0.0);
-					disabledIcon.graphics.drawRect(0.0, 0.0, 8.0, 8.0);
-					disabledIcon.graphics.endFill();
-					disabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
-					disabledIcon.graphics.moveTo(2.0, 4.0);
-					disabledIcon.graphics.lineTo(6.0, 0.0);
-					disabledIcon.graphics.lineTo(6.0, 8.0);
-					disabledIcon.graphics.lineTo(2.0, 4.0);
-					disabledIcon.graphics.endFill();
-					button.setIconForState(ButtonState.DISABLED, disabledIcon);
+					drawDecrementMonthIcon(disabledIcon, theme.labelTextDisabledColor);
+					icon.disabledView = disabledIcon;
+
+					button.icon = icon;
 				}
 				button.setPadding(2.0);
 				button.gap = 2.0;
@@ -112,10 +98,9 @@ class MinimalDatePickerStyles {
 				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MultiSkin();
-					var buttonSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.defaultView = buttonSkin;
+					backgroundSkin.defaultView = new MinimalButtonSkin(theme);
+					backgroundSkin.disabledView = new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None);
 					backgroundSkin.setViewForState(ButtonState.UP, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
-					backgroundSkin.setViewForState(ButtonState.DISABLED, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
 					if (isDesktop) {
 						backgroundSkin.width = 16.0;
 						backgroundSkin.height = 16.0;
@@ -126,30 +111,17 @@ class MinimalDatePickerStyles {
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.icon == null) {
-					var icon = new Shape();
-					icon.graphics.beginFill(0xff00ff, 0.0);
-					icon.graphics.drawRect(0.0, 0.0, 8.0, 8.0);
-					icon.graphics.endFill();
-					icon.graphics.beginFill(theme.labelTextColor);
-					icon.graphics.moveTo(2.0, 0.0);
-					icon.graphics.lineTo(6.0, 4.0);
-					icon.graphics.lineTo(2.0, 8.0);
-					icon.graphics.lineTo(2.0, 0.0);
-					icon.graphics.endFill();
-					button.icon = icon;
-				}
-				if (button.getIconForState(ButtonState.DISABLED) == null) {
+					var icon = new MultiSkin();
+
+					var defaultIcon = new Shape();
+					drawIncrementMonthIcon(defaultIcon, theme.labelTextColor);
+					icon.defaultView = defaultIcon;
+
 					var disabledIcon = new Shape();
-					disabledIcon.graphics.beginFill(0xff00ff, 0.0);
-					disabledIcon.graphics.drawRect(0.0, 0.0, 8.0, 8.0);
-					disabledIcon.graphics.endFill();
-					disabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
-					disabledIcon.graphics.moveTo(2.0, 0.0);
-					disabledIcon.graphics.lineTo(6.0, 4.0);
-					disabledIcon.graphics.lineTo(2.0, 8.0);
-					disabledIcon.graphics.lineTo(2.0, 0.0);
-					disabledIcon.graphics.endFill();
-					button.setIconForState(ButtonState.DISABLED, disabledIcon);
+					drawIncrementMonthIcon(disabledIcon, theme.labelTextDisabledColor);
+					icon.disabledView = disabledIcon;
+
+					button.icon = icon;
 				}
 				button.setPadding(2.0);
 				button.gap = 2.0;
@@ -160,10 +132,9 @@ class MinimalDatePickerStyles {
 				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MultiSkin();
-					var buttonSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.defaultView = buttonSkin;
+					backgroundSkin.defaultView = new MinimalButtonSkin(theme);
+					backgroundSkin.disabledView = new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None);
 					backgroundSkin.setViewForState(ButtonState.UP, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
-					backgroundSkin.setViewForState(ButtonState.DISABLED, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
 					if (isDesktop) {
 						backgroundSkin.width = 16.0;
 						backgroundSkin.height = 16.0;
@@ -174,32 +145,17 @@ class MinimalDatePickerStyles {
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.icon == null) {
-					var icon = new Shape();
-					icon.graphics.beginFill(theme.labelTextColor);
-					icon.graphics.moveTo(0.0, 4.0);
-					icon.graphics.lineTo(4.0, 0.0);
-					icon.graphics.lineTo(4.0, 8.0);
-					icon.graphics.lineTo(0.0, 4.0);
-					icon.graphics.moveTo(4.0, 4.0);
-					icon.graphics.lineTo(8.0, 0.0);
-					icon.graphics.lineTo(8.0, 8.0);
-					icon.graphics.lineTo(4.0, 4.0);
-					icon.graphics.endFill();
-					button.icon = icon;
-				}
-				if (button.getIconForState(ButtonState.DISABLED) == null) {
+					var icon = new MultiSkin();
+
+					var defaultIcon = new Shape();
+					drawDecrementYearIcon(defaultIcon, theme.labelTextColor);
+					icon.defaultView = defaultIcon;
+
 					var disabledIcon = new Shape();
-					disabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
-					disabledIcon.graphics.moveTo(0.0, 4.0);
-					disabledIcon.graphics.lineTo(4.0, 0.0);
-					disabledIcon.graphics.lineTo(4.0, 8.0);
-					disabledIcon.graphics.lineTo(0.0, 4.0);
-					disabledIcon.graphics.moveTo(4.0, 4.0);
-					disabledIcon.graphics.lineTo(8.0, 0.0);
-					disabledIcon.graphics.lineTo(8.0, 8.0);
-					disabledIcon.graphics.lineTo(4.0, 4.0);
-					disabledIcon.graphics.endFill();
-					button.setIconForState(ButtonState.DISABLED, disabledIcon);
+					drawDecrementYearIcon(disabledIcon, theme.labelTextDisabledColor);
+					icon.disabledView = disabledIcon;
+
+					button.icon = icon;
 				}
 				button.setPadding(2.0);
 				button.gap = 2.0;
@@ -210,10 +166,9 @@ class MinimalDatePickerStyles {
 				var isDesktop = DeviceUtil.isDesktop();
 				if (button.backgroundSkin == null) {
 					var backgroundSkin = new MultiSkin();
-					var buttonSkin = new MinimalButtonSkin(theme);
-					backgroundSkin.defaultView = buttonSkin;
+					backgroundSkin.defaultView = new MinimalButtonSkin(theme);
+					backgroundSkin.disabledView = new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None);
 					backgroundSkin.setViewForState(ButtonState.UP, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
-					backgroundSkin.setViewForState(ButtonState.DISABLED, new MinimalRectangleSkin(SolidColor(0xff00ff, 0.0), None));
 					if (isDesktop) {
 						backgroundSkin.width = 16.0;
 						backgroundSkin.height = 16.0;
@@ -224,32 +179,17 @@ class MinimalDatePickerStyles {
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.icon == null) {
-					var icon = new Shape();
-					icon.graphics.beginFill(theme.labelTextColor);
-					icon.graphics.moveTo(0.0, 0.0);
-					icon.graphics.lineTo(4.0, 4.0);
-					icon.graphics.lineTo(0.0, 8.0);
-					icon.graphics.lineTo(0.0, 0.0);
-					icon.graphics.moveTo(4.0, 0.0);
-					icon.graphics.lineTo(8.0, 4.0);
-					icon.graphics.lineTo(4.0, 8.0);
-					icon.graphics.lineTo(4.0, 0.0);
-					icon.graphics.endFill();
-					button.icon = icon;
-				}
-				if (button.getIconForState(ButtonState.DISABLED) == null) {
+					var icon = new MultiSkin();
+
+					var defaultIcon = new Shape();
+					drawIncrementYearIcon(defaultIcon, theme.labelTextColor);
+					icon.defaultView = defaultIcon;
+
 					var disabledIcon = new Shape();
-					disabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
-					disabledIcon.graphics.moveTo(0.0, 0.0);
-					disabledIcon.graphics.lineTo(4.0, 4.0);
-					disabledIcon.graphics.lineTo(0.0, 8.0);
-					disabledIcon.graphics.lineTo(0.0, 0.0);
-					disabledIcon.graphics.moveTo(4.0, 0.0);
-					disabledIcon.graphics.lineTo(8.0, 4.0);
-					disabledIcon.graphics.lineTo(4.0, 8.0);
-					disabledIcon.graphics.lineTo(4.0, 0.0);
-					disabledIcon.graphics.endFill();
-					button.setIconForState(ButtonState.DISABLED, disabledIcon);
+					drawIncrementYearIcon(disabledIcon, theme.labelTextDisabledColor);
+					icon.disabledView = disabledIcon;
+
+					button.icon = icon;
 				}
 				button.setPadding(2.0);
 				button.gap = 2.0;
@@ -344,5 +284,61 @@ class MinimalDatePickerStyles {
 				dateRenderer.paddingLeft = 2.0;
 			});
 		}
+	}
+
+	private static function drawDecrementMonthIcon(icon:Shape, color:UInt):Void {
+		icon.graphics.beginFill(0xff00ff, 0.0);
+		icon.graphics.drawRect(0.0, 0.0, 8.0, 8.0);
+		icon.graphics.endFill();
+		icon.graphics.beginFill(color);
+		icon.graphics.moveTo(2.0, 4.0);
+		icon.graphics.lineTo(6.0, 0.0);
+		icon.graphics.lineTo(6.0, 8.0);
+		icon.graphics.lineTo(2.0, 4.0);
+		icon.graphics.endFill();
+	}
+
+	private static function drawIncrementMonthIcon(icon:Shape, color:UInt):Void {
+		icon.graphics.beginFill(0xff00ff, 0.0);
+		icon.graphics.drawRect(0.0, 0.0, 8.0, 8.0);
+		icon.graphics.endFill();
+		icon.graphics.beginFill(color);
+		icon.graphics.moveTo(2.0, 0.0);
+		icon.graphics.lineTo(6.0, 4.0);
+		icon.graphics.lineTo(2.0, 8.0);
+		icon.graphics.lineTo(2.0, 0.0);
+		icon.graphics.endFill();
+	}
+
+	private static function drawDecrementYearIcon(icon:Shape, color:UInt):Void {
+		icon.graphics.beginFill(0xff00ff, 0.0);
+		icon.graphics.drawRect(0.0, 0.0, 8.0, 8.0);
+		icon.graphics.endFill();
+		icon.graphics.beginFill(color);
+		icon.graphics.moveTo(0.0, 4.0);
+		icon.graphics.lineTo(4.0, 0.0);
+		icon.graphics.lineTo(4.0, 8.0);
+		icon.graphics.lineTo(0.0, 4.0);
+		icon.graphics.moveTo(4.0, 4.0);
+		icon.graphics.lineTo(8.0, 0.0);
+		icon.graphics.lineTo(8.0, 8.0);
+		icon.graphics.lineTo(4.0, 4.0);
+		icon.graphics.endFill();
+	}
+
+	private static function drawIncrementYearIcon(icon:Shape, color:UInt):Void {
+		icon.graphics.beginFill(0xff00ff, 0.0);
+		icon.graphics.drawRect(0.0, 0.0, 8.0, 8.0);
+		icon.graphics.endFill();
+		icon.graphics.beginFill(color);
+		icon.graphics.moveTo(0.0, 0.0);
+		icon.graphics.lineTo(4.0, 4.0);
+		icon.graphics.lineTo(0.0, 8.0);
+		icon.graphics.lineTo(0.0, 0.0);
+		icon.graphics.moveTo(4.0, 0.0);
+		icon.graphics.lineTo(8.0, 4.0);
+		icon.graphics.lineTo(4.0, 8.0);
+		icon.graphics.lineTo(4.0, 0.0);
+		icon.graphics.endFill();
 	}
 }

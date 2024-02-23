@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.skins.MultiSkin;
 import feathers.controls.FormItem;
 import feathers.style.Theme;
 import openfl.display.Shape;
@@ -31,20 +32,16 @@ class MinimalFormItemStyles {
 		if (styleProvider.getStyleFunction(FormItem, null) == null) {
 			styleProvider.setStyleFunction(FormItem, null, function(formItem:FormItem):Void {
 				if (formItem.requiredSkin == null) {
-					var requiredSkin = new Shape();
-					requiredSkin.graphics.lineStyle(1.0, theme.dangerTextColor);
-					requiredSkin.graphics.moveTo(3.0, 0.5);
-					requiredSkin.graphics.lineTo(3.0, 4.5);
+					var requiredSkin = new MultiSkin();
 
-					requiredSkin.graphics.moveTo(1.0, 1.5);
-					requiredSkin.graphics.lineTo(5.0, 3.5);
-					requiredSkin.graphics.moveTo(1.0, 3.5);
-					requiredSkin.graphics.lineTo(5.0, 1.5);
+					var defaultIcon = new Shape();
+					drawRequiredIcon(defaultIcon, theme.dangerTextColor);
+					requiredSkin.defaultView = defaultIcon;
 
-					requiredSkin.graphics.lineStyle();
-					requiredSkin.graphics.beginFill(0xff00ff, 0.0);
-					requiredSkin.graphics.drawRect(0.0, 0.0, 6.0, 5.0);
-					requiredSkin.graphics.endFill();
+					var disabledIcon = new Shape();
+					drawRequiredIcon(disabledIcon, theme.labelTextDisabledColor);
+					requiredSkin.disabledView = disabledIcon;
+
 					formItem.requiredSkin = requiredSkin;
 				}
 
@@ -58,5 +55,21 @@ class MinimalFormItemStyles {
 				formItem.gap = 1.0;
 			});
 		}
+	}
+
+	private static function drawRequiredIcon(icon:Shape, color:UInt):Void {
+		icon.graphics.lineStyle(1.0, color);
+		icon.graphics.moveTo(3.0, 0.5);
+		icon.graphics.lineTo(3.0, 4.5);
+
+		icon.graphics.moveTo(1.0, 1.5);
+		icon.graphics.lineTo(5.0, 3.5);
+		icon.graphics.moveTo(1.0, 3.5);
+		icon.graphics.lineTo(5.0, 1.5);
+
+		icon.graphics.lineStyle();
+		icon.graphics.beginFill(0xff00ff, 0.0);
+		icon.graphics.drawRect(0.0, 0.0, 6.0, 5.0);
+		icon.graphics.endFill();
 	}
 }

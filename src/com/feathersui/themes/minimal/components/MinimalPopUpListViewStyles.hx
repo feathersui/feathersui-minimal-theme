@@ -39,29 +39,11 @@ class MinimalPopUpListViewStyles {
 					var icon = new MultiSkin();
 
 					var defaultIcon = new Shape();
-					defaultIcon.graphics.beginFill(0xff00ff, 0.0);
-					defaultIcon.graphics.drawRect(0.0, 0.0, 18.0, 18.0);
-					defaultIcon.graphics.endFill();
-					defaultIcon.graphics.beginFill(theme.labelTextColor);
-					defaultIcon.graphics.drawRect(9.0, 7.0, 1.0, 5.0);
-					defaultIcon.graphics.drawRect(7.0, 9.0, 5.0, 1.0);
-					defaultIcon.graphics.endFill();
-					defaultIcon.graphics.beginFill(theme.backgroundColor);
-					defaultIcon.graphics.drawRect(0.0, 0.0, 1.0, 18.0);
-					defaultIcon.graphics.endFill();
+					drawArrowIcon(defaultIcon, theme.labelTextColor, theme.backgroundColor);
 					icon.defaultView = defaultIcon;
 
 					var disabledIcon = new Shape();
-					disabledIcon.graphics.beginFill(0xff00ff, 0.0);
-					disabledIcon.graphics.drawRect(0.0, 0.0, 18.0, 18.0);
-					disabledIcon.graphics.endFill();
-					disabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
-					disabledIcon.graphics.drawRect(9.0, 7.0, 1.0, 5.0);
-					disabledIcon.graphics.drawRect(7.0, 9.0, 5.0, 1.0);
-					disabledIcon.graphics.endFill();
-					disabledIcon.graphics.beginFill(theme.backgroundColor);
-					disabledIcon.graphics.drawRect(0.0, 0.0, 1.0, 18.0);
-					disabledIcon.graphics.endFill();
+					drawArrowIcon(disabledIcon, theme.labelTextDisabledColor, theme.backgroundColor);
 					icon.disabledView = disabledIcon;
 
 					button.icon = icon;
@@ -73,5 +55,18 @@ class MinimalPopUpListViewStyles {
 				styleProvider.getStyleFunction(ListView, ListView.VARIANT_POP_UP)(listView);
 			});
 		}
+	}
+
+	private static function drawArrowIcon(icon:Shape, iconColor:UInt, backgroundColor:UInt):Void {
+		icon.graphics.beginFill(0xff00ff, 0.0);
+		icon.graphics.drawRect(0.0, 0.0, 18.0, 18.0);
+		icon.graphics.endFill();
+		icon.graphics.beginFill(iconColor);
+		icon.graphics.drawRect(9.0, 7.0, 1.0, 5.0);
+		icon.graphics.drawRect(7.0, 9.0, 5.0, 1.0);
+		icon.graphics.endFill();
+		icon.graphics.beginFill(backgroundColor);
+		icon.graphics.drawRect(0.0, 0.0, 1.0, 18.0);
+		icon.graphics.endFill();
 	}
 }

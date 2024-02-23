@@ -61,17 +61,11 @@ class MinimalComboBoxStyles {
 					var icon = new MultiSkin();
 
 					var defaultIcon = new Shape();
-					defaultIcon.graphics.beginFill(theme.labelTextColor);
-					defaultIcon.graphics.drawRect(2.0, 0.0, 1.0, 5.0);
-					defaultIcon.graphics.drawRect(0.0, 2.0, 5.0, 1.0);
-					defaultIcon.graphics.endFill();
+					drawArrowIcon(defaultIcon, theme.labelTextColor);
 					icon.defaultView = defaultIcon;
 
 					var disabledIcon = new Shape();
-					disabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
-					disabledIcon.graphics.drawRect(2.0, 0.0, 1.0, 5.0);
-					disabledIcon.graphics.drawRect(0.0, 2.0, 5.0, 1.0);
-					disabledIcon.graphics.endFill();
+					drawArrowIcon(disabledIcon, theme.labelTextDisabledColor);
 					icon.disabledView = disabledIcon;
 
 					button.icon = icon;
@@ -88,5 +82,12 @@ class MinimalComboBoxStyles {
 				styleProvider.getStyleFunction(ListView, ListView.VARIANT_POP_UP)(listView);
 			});
 		}
+	}
+
+	private static function drawArrowIcon(icon:Shape, color:UInt):Void {
+		icon.graphics.beginFill(color);
+		icon.graphics.drawRect(2.0, 0.0, 1.0, 5.0);
+		icon.graphics.drawRect(0.0, 2.0, 5.0, 1.0);
+		icon.graphics.endFill();
 	}
 }

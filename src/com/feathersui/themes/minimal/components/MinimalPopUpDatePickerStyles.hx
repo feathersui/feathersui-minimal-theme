@@ -8,6 +8,7 @@
 
 package com.feathersui.themes.minimal.components;
 
+import feathers.skins.MultiSkin;
 import feathers.utils.DeviceUtil;
 import com.feathersui.themes.minimal.skins.MinimalRectangleSkin;
 import com.feathersui.themes.minimal.skins.MinimalButtonSkin;
@@ -50,15 +51,17 @@ class MinimalPopUpDatePickerStyles {
 					button.backgroundSkin = backgroundSkin;
 				}
 				if (button.icon == null) {
-					var icon = new Shape();
-					drawIcon(icon, theme.labelTextColor);
-					button.icon = icon;
+					var icon = new MultiSkin();
 
-					if (button.getIconForState(ButtonState.DISABLED) == null) {
-						var disabledIcon = new Shape();
-						drawIcon(disabledIcon, theme.labelTextDisabledColor);
-						button.setIconForState(ButtonState.DISABLED, disabledIcon);
-					}
+					var defaultIcon = new Shape();
+					drawIcon(defaultIcon, theme.labelTextColor);
+					icon.defaultView = defaultIcon;
+
+					var disabledIcon = new Shape();
+					drawIcon(disabledIcon, theme.labelTextDisabledColor);
+					icon.disabledView = disabledIcon;
+
+					button.icon = icon;
 				}
 				if (button.textFormat == null) {
 					button.textFormat = theme.getTextFormat();

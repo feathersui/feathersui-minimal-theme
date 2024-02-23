@@ -77,54 +77,46 @@ class MinimalHierarchicalItemRendererStyles {
 					button.icon = icon;
 
 					var defaultIcon = new Shape();
-					defaultIcon.graphics.beginFill(0xff00ff, 0.0);
-					defaultIcon.graphics.drawRect(0.0, 0.0, 10.0, 10.0);
-					defaultIcon.graphics.endFill();
-					defaultIcon.graphics.beginFill(theme.labelTextColor);
-					defaultIcon.graphics.moveTo(2.0, 2.0);
-					defaultIcon.graphics.lineTo(8.0, 5.0);
-					defaultIcon.graphics.lineTo(2.0, 8.0);
-					defaultIcon.graphics.lineTo(2.0, 2.0);
-					defaultIcon.graphics.endFill();
+					drawDisclosureIconClosed(defaultIcon, theme.labelTextColor);
 					icon.defaultView = defaultIcon;
 
 					var disabledIcon = new Shape();
-					disabledIcon.graphics.beginFill(0xff00ff, 0.0);
-					disabledIcon.graphics.drawRect(0.0, 0.0, 10.0, 10.0);
-					disabledIcon.graphics.endFill();
-					disabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
-					disabledIcon.graphics.moveTo(2.0, 2.0);
-					disabledIcon.graphics.lineTo(8.0, 5.0);
-					disabledIcon.graphics.lineTo(2.0, 8.0);
-					disabledIcon.graphics.lineTo(2.0, 2.0);
-					disabledIcon.graphics.endFill();
+					drawDisclosureIconClosed(disabledIcon, theme.labelTextDisabledColor);
 					icon.disabledView = disabledIcon;
 
 					var selectedIcon = new Shape();
-					selectedIcon.graphics.beginFill(0xff00ff, 0.0);
-					selectedIcon.graphics.drawRect(0.0, 0.0, 10.0, 10.0);
-					selectedIcon.graphics.endFill();
-					selectedIcon.graphics.beginFill(theme.labelTextColor);
-					selectedIcon.graphics.moveTo(2.0, 2.0);
-					selectedIcon.graphics.lineTo(8.0, 2.0);
-					selectedIcon.graphics.lineTo(5.0, 8.0);
-					selectedIcon.graphics.lineTo(2.0, 2.0);
-					selectedIcon.graphics.endFill();
+					drawDisclosureIconOpen(selectedIcon, theme.labelTextColor);
 					icon.selectedView = selectedIcon;
 
 					var selectedDisabledIcon = new Shape();
-					selectedDisabledIcon.graphics.beginFill(0xff00ff, 0.0);
-					selectedDisabledIcon.graphics.drawRect(0.0, 0.0, 10.0, 10.0);
-					selectedDisabledIcon.graphics.endFill();
-					selectedDisabledIcon.graphics.beginFill(theme.labelTextDisabledColor);
-					selectedDisabledIcon.graphics.moveTo(2.0, 2.0);
-					selectedDisabledIcon.graphics.lineTo(8.0, 2.0);
-					selectedDisabledIcon.graphics.lineTo(5.0, 8.0);
-					selectedDisabledIcon.graphics.lineTo(2.0, 2.0);
-					selectedDisabledIcon.graphics.endFill();
+					drawDisclosureIconOpen(selectedDisabledIcon, theme.labelTextDisabledColor);
 					icon.setViewForState(DISABLED(true), selectedDisabledIcon);
 				}
 			});
 		}
+	}
+
+	private static function drawDisclosureIconClosed(icon:Shape, color:UInt):Void {
+		icon.graphics.beginFill(0xff00ff, 0.0);
+		icon.graphics.drawRect(0.0, 0.0, 10.0, 10.0);
+		icon.graphics.endFill();
+		icon.graphics.beginFill(color);
+		icon.graphics.moveTo(2.0, 2.0);
+		icon.graphics.lineTo(8.0, 5.0);
+		icon.graphics.lineTo(2.0, 8.0);
+		icon.graphics.lineTo(2.0, 2.0);
+		icon.graphics.endFill();
+	}
+
+	private static function drawDisclosureIconOpen(icon:Shape, color:UInt):Void {
+		icon.graphics.beginFill(0xff00ff, 0.0);
+		icon.graphics.drawRect(0.0, 0.0, 10.0, 10.0);
+		icon.graphics.endFill();
+		icon.graphics.beginFill(color);
+		icon.graphics.moveTo(2.0, 2.0);
+		icon.graphics.lineTo(8.0, 2.0);
+		icon.graphics.lineTo(5.0, 8.0);
+		icon.graphics.lineTo(2.0, 2.0);
+		icon.graphics.endFill();
 	}
 }
